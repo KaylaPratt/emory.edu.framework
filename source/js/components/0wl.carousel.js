@@ -1,0 +1,27 @@
+jQuery(document).ready(function(){
+    $("#owl-carousel-horizontal").owlCarousel({
+        loop:true,
+        nav:true,
+        navText : ['<span class="fa fa-chevron-circle-left" aria-hidden="true"></span>','<span class="fa fa-chevron-circle-right" aria-hidden="true"></span>'],
+        dots:true,
+        margin:30,
+        autoplay:true,
+        autoplayHoverPause:true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:false
+            },
+            768:{
+                items:2,
+                nav:true
+            },
+            992:{
+                items:4,
+                nav:true,
+                loop:false
+            }
+        }
+    });
+});

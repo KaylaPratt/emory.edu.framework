@@ -1,0 +1,48 @@
+<!-- Dropdown Item -->
+<li class="dropdown mega-dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research</a>
+    <ul class="dropdown-menu mega-dropdown-menu row">
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4 col-md-3">
+            <ul>
+                <li class="dropdown-header"><a href="#">Research</a></li>
+                {{# listItems.five }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.five }}
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4 col-md-3">
+            <ul>
+                <li class="dropdown-header">Research News</li>
+                <li>{{> molecules-textbox:event(textboxLabel: true, textboxMeta: true) }}</li>
+                <li>{{> molecules-textbox:event(textboxLabel: true, textboxMeta: true) }}</li>
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4 col-md-6">
+            <ul>
+                <li class="dropdown-header">Featured Research</li>
+                <li id="featuredResearch" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            {{> atoms-landscape-16x9 }}
+                            <br />
+                            <p>{{ description.short }}</p>
+                        </div>
+                        <!-- End Item -->
+                        <div class="item">
+                            {{> atoms-landscape-16x9 }}
+                            <br />
+                            <p>{{ description.short }}</p>
+                        </div>
+                        <!-- End Item -->
+                    </div><!-- End Carousel Inner -->
+                </li><!-- /.carousel -->
+            </ul>
+        </li>
+    </ul><!-- /.dropdown-menu -->
+</li><!-- /.dropdown -->

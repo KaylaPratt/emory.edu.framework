@@ -1,0 +1,33 @@
+<!-- Dropdown Item -->
+<li class="dropdown mega-dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Campus Experience</a>
+    <ul class="dropdown-menu mega-dropdown-menu row">
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4">
+            <ul>
+                <li class="dropdown-header"><a href="#">Campus Experience</a></li>
+                {{# listItems.eight }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.eight }}
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4">
+            <ul>
+                <li class="dropdown-header">Upcoming Events</li>
+                <li>{{> molecules-textbox:event(textboxLabel: true, textboxMeta: true) }}</li>
+                <li>{{> molecules-textbox:article(textboxLabel: true, textboxMeta: true) }}</li>
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4">
+            <ul>
+                <li>{{> atoms-landscape-16x9 }}</li>
+            </ul>
+        </li>
+
+    </ul><!-- /.dropdown-menu -->
+</li><!-- /.dropdown -->

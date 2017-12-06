@@ -1,0 +1,44 @@
+.hero-image {
+    height:300px;
+    max-height:300px;
+    overflow:hidden;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:center;
+    align-items:center;
+    background:
+        $brand-primary
+        url('https://unsplash.it/1200/600')
+        center center / cover
+        no-repeat
+        scroll;
+    .hero-image__textarea {
+        padding:0 0 3.5rem 3.5rem;
+        height:100%;
+        width:100%;
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:flex-end;
+        background:rgba(0,0,0,.5);
+        .hero-image__title,
+        .hero-image__subtitle {color:#fff;margin:0;}
+        // Add border between title and subtitle
+        .hero-image__title {
+            border-bottom:3px solid rgba(255,255,255,.25);
+            margin-bottom:.5rem;
+            padding-bottom:.5rem;
+        }
+        .hero-image__subtitle {
+            font-family:$subheading;
+            font-weight:normal;
+            font-size:2rem;
+        }
+    }
+    
+    //------------------------------------//
+    // PARALLAX                           //
+    //------------------------------------//
+    
+    // Do you want parallax? Because this is how you get parallax.
+    &.hero-image-parallax {background-attachment:fixed;}
+}

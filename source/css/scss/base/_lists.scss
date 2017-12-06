@@ -1,0 +1,54 @@
+//------------------------------------//
+// UNORDERED LIST                     //
+// Colored bullet points              //
+//------------------------------------//
+.list-group {
+    list-style:none;
+    > li::before {
+        color:$aqua;
+        display:inline-block;
+        margin-right:.5rem;
+    }
+}
+ul.list-group > li::before {content:"\2022";} // Dot
+
+//------------------------------------//
+// ORDERED LIST                       //
+// Colored numerals                   //
+//------------------------------------//
+ol.list-group {
+    counter-reset:li;
+    > li {
+        counter-increment:li;
+        &::before {
+            margin-left:-7px;
+            width:10px;
+            content:counter(li) ". "; // Place Numbers with period before <ol> items
+        }
+    }
+}
+
+//------------------------------------//
+// BLOCK LIST                         //
+//------------------------------------//
+.block-list {
+    margin:0;
+    padding:0;
+    list-style:none;
+    li {
+        font-size:1.5rem;
+        border-bottom:1px solid rgba(0,0,0,.15);
+        padding:1rem 0;
+    }
+    a {
+        display:block;
+        text-decoration:none;
+        &:after {
+            font-family:'Fontawesome';
+            content:' ' $fa-var-chevron-right;
+            font-size:1rem;
+            margin-left:.5rem;
+        }
+    }
+    &:last-of-type {margin-bottom:2.5rem;}
+}

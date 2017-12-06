@@ -1,0 +1,246 @@
+//------------------------------------//
+// DEFAULT FORM GROUPS                //
+//------------------------------------//
+.form-group {
+    
+    label {font-weight:normal;}
+    select {
+      // Default icon (15x15)
+      background: // Fontawesome long-arrow-down in $brand-secondary
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAMAAACfvvDEAAAAOVBMVEUAS5cBTJcCTJgDTZgETpkFT5kIUZoKUpsTWJ8UWZ8lZaaPsNGlv9q1y+G5zuLM2+re6PL1+Pv///+gvxmMAAAAQklEQVQ4je3ROQKAIBTE0I/gAi5o7n9YWsuxspnUr0uEc197KKKE2fIHuVVoNQlyBzgVmQ7o2vjpuhcJRuRVhM69Gv/YArc++TKwAAAAAElFTkSuQmCC')
+        right center
+        no-repeat
+        scroll;
+      
+      // Lighten the color of the select icon on hover
+      &:hover {background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAMAAACfvvDEAAAAOVBMVEUAXbsBXrsCXrwDX7wEYLwFYLwIYr0KY74TacAUasAldcWPuOGlxue10Ou50+zM3/He6vb1+fz////TBOwLAAAAQklEQVQ4je3ROQKAIBTE0I/gAi5o7n9YWsuxspnUr0uEc197KKKE2fIHuVVoNQlyBzgVmQ7o2vjpuhcJRuRVhM69Gv/YArc++TKwAAAAAElFTkSuQmCC');}
+    
+      // Appearance h4x
+      appearance:none;                // Remove FF and Chrome dropdown arrow
+      &::-ms-expand {display: none;}  // Remove IE dropdown arrow
+    }
+
+    // -- Multiple select -- //
+    select[multiple] {background:none;}
+
+    //------------------------------------//
+    // LARGE FORM GROUPS                  //
+    //------------------------------------//
+    &.form-group-lg {
+      
+      select {
+        // Large icon ( 20x20)
+        background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAMAAAC7m5rvAAAARVBMVEUAS5cCTJgETpkGT5kIUZoLU5sOVZ0RV54aXaI+d7Bmk8G5zuK6zuO+0eTP3evZ5PDg6fLm7fXo7/bx9fn1+Pv7/P3///89107sAAAASklEQVRIie3Nxw3AQAzEQDlH+RzZf6muQfcTsPwPaKaUStvHVsPAxcTSs9UdXvclxroCwN4Ed8MFHG1QmU0PZx9WZvM9ViilVPJ+jkIE/M3SwE4AAAAASUVORK5CYII=');
+        
+        // Lighten the color of the icon on hover
+        &:hover {background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAMAAAC7m5rvAAAARVBMVEUAXLoCXbsEX7sGYLwIYbwLY70OZb4RZ78abcE+hMtmnda50uy60+y+1e3P4PLZ5/Xg6/fm7/jo8Pnx9vv1+fz7/P7///8m7iPdAAAASklEQVRIie3Nxw3AQAzEQDlH+RzZf6muQfcTsPwPaKaUStvHVsPAxcTSs9UdXvclxroCwN4Ed8MFHG1QmU0PZx9WZvM9ViilVPJ+jkIE/M3SwE4AAAAASUVORK5CYII=');}
+        
+        // Bug fixes
+        line-height: 1.33; // Bootstrap SASS compiler bug
+      }
+
+      // -- Multiple select -- //
+      select[multiple] {background:none;}
+      }
+
+    //------------------------------------//
+    // SMALL FORM GROUPS                  //
+    //------------------------------------//
+    &.form-group-sm {
+      select {line-height:initial;}
+      
+      // -- Multiple select -- //
+      select[multiple] {background:none;}
+    }
+
+}
+
+//------------------------------------//
+// CHECKBOXES                         //
+//------------------------------------//
+// https://bootsnipp.com/snippets/ZkMKE 
+.checkbox {
+  padding-left: 20px;
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      background-color: #fff;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+    &::after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: -20px;
+      padding-left: 3px;
+      padding-top: 1px;
+      font-size: 11px;
+      color: #555555;
+    }
+  }
+  input[type="checkbox"] {
+    opacity: 0;
+    &:focus + label::after {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+    &:checked + label::after {
+      font-family: 'FontAwesome';
+      content: $fa-var-check;
+    }
+    &:disabled + label {
+      opacity: 0.65;
+      &::before {
+        background-color: #eeeeee;
+        cursor: not-allowed;
+      }
+    }
+  }
+  &.checkbox-circle label::before {border-radius: 50%;}
+  &.checkbox-inline {margin-top: 0;}
+}
+
+// -- Checkbox Brand Colors -- //
+.checkbox-primary,
+.checkbox-danger,
+.checkbox-info,
+.checkbox-warning,
+.checkbox-success {
+  input[type="checkbox"]:checked + label::after {color:#fff;}
+}
+
+.checkbox-primary input[type="checkbox"]:checked + label {
+  &::before {
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
+  }
+}
+
+.checkbox-danger input[type="checkbox"]:checked + label {
+  &::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+}
+
+.checkbox-info input[type="checkbox"]:checked + label {
+  &::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+}
+
+.checkbox-warning input[type="checkbox"]:checked + label {
+  &::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+}
+
+.checkbox-success input[type="checkbox"]:checked + label {
+  &::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+}
+
+//------------------------------------//
+// RADIOS                             //
+//------------------------------------//
+// https://bootsnipp.com/snippets/ZkMKE
+.radio {
+  padding-left: 20px;
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid #cccccc;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: border 0.15s ease-in-out;
+    }
+    &::after {
+      display: inline-block;
+      position: absolute;
+      content: " ";
+      width: 11px;
+      height: 11px;
+      left: 3px;
+      top: 3px;
+      margin-left: -20px;
+      border-radius: 50%;
+      background-color: #555555;
+      transform: scale(0, 0);
+      transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
+    }
+  input[type="radio"] {
+    opacity: 0;
+    &:focus + label::before {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+    &:checked + label::after {
+      transform: scale(1, 1);
+    }
+    &:disabled + label {
+      opacity: 0.65;
+      &::before {cursor: not-allowed;}
+    }
+  }
+  &.radio-inline {margin-top: 0;}
+}
+
+// -- Radio Brand Colors -- //
+.radio-primary input[type="radio"] {
+  &:checked + label::after,
+  + label::after {background-color: $brand-secondary;}
+  &:checked + label::before {border-color: $brand-secondary;}
+}
+
+.radio-danger input[type="radio"] {
+  &:checked + label::after,
+  + label::after {background-color: $brand-danger;}
+  &:checked + label::before {border-color: $brand-danger;}
+}
+
+.radio-info input[type="radio"] {
+  &:checked + label::after,
+  + label::after {background-color: $brand-info;}
+  &:checked + label::before {border-color: $brand-info;}
+}
+
+.radio-warning input[type="radio"] {
+  &:checked + label::after,
+  + label::after {background-color: $brand-warning;}
+  &:checked + label::before {border-color: $brand-warning;}
+}
+
+.radio-success input[type="radio"] {
+  &:checked + label::after,
+  + label::after {background-color: $brand-success;}
+  &:checked + label::before {border-color: $brand-success;}
+}

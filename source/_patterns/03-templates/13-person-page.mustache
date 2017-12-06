@@ -1,0 +1,33 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Biography Page") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page interior-page person-page" id="page">
+    {{> atoms-background }}
+	<main role="main">
+		<div class="container">
+            <div class="row">
+                
+                <!-- Person biography -->
+                <div class="col-sm-8">
+                    <h1>Person Page - Biographies, Contact Info</h1>
+                    {{> molecules-person:bio(personBio: true, extraInfo: true, headline: "Awards & Recognition") }}
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-sm-4">
+                    <section class="sidebar">
+                        <h2 class="heading-bg">Sidebar Nav</h2>
+                        {{> molecules-nav:nav-stacked }}
+                    </section>
+                </div>
+            </div>
+		</div>
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

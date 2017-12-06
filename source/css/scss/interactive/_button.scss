@@ -1,0 +1,71 @@
+.btn {
+    border-width:1.5px;
+    text-transform:uppercase;
+    text-decoration:none;
+    letter-spacing:.15rem;
+    &.btn-default {
+        &:hover,
+        &.btn-solid {
+            background:$gold;
+            border-color:$gold;
+        }
+    }
+    &.btn-primary {
+        &:hover,
+        &.btn-solid {
+            background:$brand-secondary;
+            border-color:$brand-secondary;
+        }
+    }
+    &.btn-success {
+        &:hover,
+        &.btn-solid {
+            background:$brand-success;
+            border-color:$brand-success;
+        }
+    }
+    &.btn-info {
+        &:hover,
+        &.btn-solid {
+            background:$brand-info;
+            border-color:$brand-info;
+        }
+    }
+    &.btn-warning {
+        &:hover,
+        &.btn-solid {
+            background:$brand-warning;
+            border-color:$brand-warning;
+        }
+    }
+    &.btn-danger {
+        &:hover,
+        &.btn-solid {
+            background:$brand-danger;
+            border-color:$brand-danger;
+        }
+    }
+    &.btn-solid,
+    &:hover:not(.btn-link) {color:#fff;}
+    
+    // Solid buttons, outlined on hover
+    &.btn-solid.btn-link {color:inherit;}
+    &.btn-solid:hover {filter:brightness(1.25);}
+    
+    // Borderless buttons
+    &.btn-borderless {
+        border-color:transparent;
+        padding-left:0;
+        padding-right:0;
+        &:after {
+            font-family:'Fontawesome';
+            content:' ' $fa-var-chevron-right;
+        }
+        &:hover:not(.btn-link) {
+            background:transparent;
+            border-color:transparent;
+            border-bottom-color:initial;
+            color:inherit;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+//------------------------------------//
+// GENERAL                            //
+//------------------------------------//
+body,html {font-family:$font-family-sans-serif;}
+h1 {color:$brand-secondary;}
+h1,h2,h3,h4,h5,h6 {
+    font-family:$heading;
+}
+p,ol,ul,dl {
+    font-family:$font-family-sans-serif;
+    line-height:2.5rem;
+}
+ul,ol {margin-left:2rem;}
+dl > dd {margin-bottom:1rem;}
+blockquote {
+    border-color:$highlight;
+    p {font:italic normal normal 2.5rem/3rem $font-family-serif;}
+}
+
+//------------------------------------//
+// TEXT SELECTION                     //
+//------------------------------------//
+::selection {
+    background:$pumpkin;
+    color:#fff;
+}
+
+//------------------------------------//
+// HEADINGS                           //
+//------------------------------------//
+
+// Underlined
+.underline {
+    font-size:2.5rem;
+    color:$brand-secondary;
+    border-bottom:5px solid $brand-secondary;
+    margin-bottom:$grid-gutter-width;
+    padding-bottom:1rem;
+}
+h3,h4,h5,h6 {
+    &.underline {
+        font-family:$font-family-sans-serif;
+        text-transform:uppercase;
+        letter-spacing:.15rem;
+    }
+}
+
+// Background color
+.heading-bg {
+    background:$platinum;
+    font-family:$font-family-sans-serif;
+    font-weight:bold;
+    font-size:1.5rem;
+    letter-spacing:.2rem;
+    text-transform:uppercase;
+    color:$brand-secondary;
+    padding:1.75rem 2rem;
+    margin:calc(#{$grid-gutter-width / 2}) 0 $grid-gutter-width 0;
+    > a {
+        font-weight:normal;
+        text-transform:none;
+        color:$link-color;
+        letter-spacing:initial;
+        &:hover {text-decoration:none;}
+    }
+
+    // Emory Blue background color
+    &.heading-bg-brand {
+        font-family:$font-family-serif;
+        text-transform:none;
+        background:$brand-secondary;
+        color:#fff;
+        > a {color:#fff;}
+    }
+}
+
+// Sidebar styles
+.sidebar {
+    // Headings
+    .underline,
+    .heading-bg,
+    h1,h2,h3,h4,h5,h6 {margin-top:$grid-gutter-width;}
+    
+    // Forms in sidebar
+    form {
+        fieldset:not(:last-of-type) {margin-bottom:calc(#{$grid-gutter-width} / 2);}
+        .heading-bg {margin:calc(#{$grid-gutter-width} / 2) 0;}
+    }
+}
+
+// Label headings
+h1,h2,h3,h4,h5,h6 {
+    &.label {@include label($brand-secondary,#fff,inherit);}
+}
+.label-lg {font-size:18px!important;}
+.label-xl {font-size:24px!important;}
+
+// Heading Group
+.heading-group {
+    & > :first-child {text-transform:capitalize;}
+    & > :last-child {
+        margin-top:.5rem;
+        font-family:$font-family-sans-serif;
+    }
+    border-bottom:5px solid $brand-secondary;
+    margin-bottom:1.5em;
+    padding-bottom:.5em;
+}

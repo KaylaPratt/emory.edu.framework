@@ -1,0 +1,49 @@
+<!-- Dropdown Item -->
+<li class="dropdown mega-dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics</a>
+    <ul class="dropdown-menu mega-dropdown-menu row">
+        
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header"><a href="#">Academics</a></li>
+                {{# listItems.seven }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.seven }}        
+            </ul>
+        </li>
+
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header">Degrees &amp; Programs</li>
+                {{# listItems.seven }}
+                <li><a href="#">{{ list.medium }}</a></li>
+                {{/ listItems.seven }}
+            </ul>
+        </li>
+        <li class="clearfix hidden-xs visible-sm-block hidden-md"></li>
+
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header">Colleges</li>
+                {{# listItems.four }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.four }}
+            </ul>
+        </li>
+
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header">Academic Calendars</li>
+                {{# listItems.three }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.three }}
+                <li>{{> molecules-textbox:event(textboxLabel: true, textboxMeta: true) }}</li>
+            </ul>
+        </li>
+
+    </ul><!-- /.dropdown-menu -->
+</li><!-- /.dropdown -->

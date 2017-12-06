@@ -1,0 +1,73 @@
+.microsite-page {
+    position:relative;
+    height: 100vh;
+    overflow:hidden;
+    main {padding:0!important;}
+    .header {position:relative;}
+    .navbar {position:relative;z-index:2;}
+    .decor {
+        position:absolute;
+        right: -100px;
+        width: 500px;
+        height: 200px;
+        transform:rotate(-45deg);
+        z-index:1;
+        opacity:.15;
+        svg polygon {fill:rgba(255,255,255,.5);}
+        + .decor {
+            position:absolute;
+            right: -100px;
+            top:50px;
+            width: 200px;
+            height: 200px;
+            transform:rotate(-45deg);
+            z-index:1;
+            opacity:.05;
+            svg polygon {fill:$brand-secondary;}
+        }
+    }
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    .microsite-page {
+        
+        // Fullscreen Carousel settings
+        .carousel.carousel-fullscreen {
+            .fill {
+                // Fonts
+                h1,h2,h3,h4,h5,h6 {margin:0 0 1rem 0;}
+                h1 {font-size:2.5rem;}
+                h2 {font-size:2rem;}
+                p.lead {font-size:1.5rem;}
+                p {font-size:1.25rem;line-height:1.75rem;}
+
+                // Positioning
+                justify-content:flex-start;
+                padding-top:$grid-gutter-width;
+                
+                // Darken background for readbility
+                &::before {background-color:rgba(0,0,0,.25);}
+            }
+            .item,
+            .fill,
+            .carousel-inner {height:calc(100vh - #{$navbar-height});}
+        }
+
+        // Vertical Carousel settings
+        .carousel.carousel-vertical {
+            
+            .carousel-indicators {
+                bottom:auto;
+                top:40%;
+                transform:translateX(-40%);
+            }
+        }
+        
+    }
+}
+@media(min-width:$screen-sm-min){}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){}

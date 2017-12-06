@@ -1,0 +1,446 @@
+/*
+ * jQuery OrgChart Plugin
+ * https://github.com/dabeng/OrgChart
+ *
+ * Demos of jQuery OrgChart Plugin
+ * http://dabeng.github.io/OrgChart/local-datasource/
+ * http://dabeng.github.io/OrgChart/ajax-datasource/
+ * http://dabeng.github.io/OrgChart/ondemand-loading-data/
+ * http://dabeng.github.io/OrgChart/option-createNode/
+ * http://dabeng.github.io/OrgChart/export-orgchart/
+ * http://dabeng.github.io/OrgChart/integrate-map/
+ *
+ * Copyright 2016, dabeng
+ * http://dabeng.github.io/
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+.orgchart {
+  display: inline-block;
+  user-select: none;
+}
+
+.orgchart .hidden, .orgchart~.hidden {
+  display: none!important;
+}
+
+.orgchart *, .orgchart *:before, .orgchart *:after {
+  box-sizing: border-box;
+}
+
+.orgchart.b2t {
+  transform: rotate(180deg);
+}
+
+.orgchart.l2r {
+  position: absolute;
+  transform: rotate(-90deg) rotateY(180deg);
+  transform-origin: left top;
+}
+
+.orgchart .verticalNodes ul {
+  list-style: none;
+  margin:0px;
+  padding-left: 18px;
+  text-align: left;
+}
+.orgchart .verticalNodes ul:first-child {
+  margin-top: 2px;
+}
+.orgchart .verticalNodes>td::before {
+  content: '';
+}
+.orgchart .verticalNodes>td>ul>li:first-child::before {
+  top: -4px;
+  height: 30px;
+  width: calc(50% - 2px);
+  border-width: 2px 0 0 2px;
+}
+.orgchart .verticalNodes ul>li {
+  position: relative;
+}
+.orgchart .verticalNodes ul>li::before,
+.orgchart .verticalNodes ul>li::after {
+  content: '';
+  position: absolute;
+  left: -6px;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+}
+.orgchart .verticalNodes ul>li::before {
+  top: -4px;
+  height: 30px;
+  width: 11px;
+}
+.orgchart .verticalNodes ul>li::after {
+  top: 1px;
+  height: 100%;
+}
+.orgchart .verticalNodes ul>li:first-child::after {
+  top: 24px;
+  width: 11px;
+  border-width: 2px 0 0 2px;
+}
+.orgchart .verticalNodes ul>li:last-child::after {
+  border-width: 2px 0 0;
+}
+
+.orgchart.r2l {
+  position: absolute;
+  transform: rotate(90deg);
+  transform-origin: left top;
+}
+
+.orgchart>.spinner {
+  font-size: 100px;
+  margin-top: 30px;
+  color: rgba(68, 157, 68, 0.8);
+}
+
+.orgchart table {
+  border-spacing: 0!important;
+  border-collapse: separate!important;
+}
+
+.orgchart>table:first-child{
+  margin: 20px auto;
+}
+
+.orgchart td {
+  text-align: center;
+  vertical-align: top;
+  padding: 0;
+}
+
+/* node styling */
+.orgchart .node {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 3px;
+  border: 2px dashed transparent;
+  text-align: center;
+  width: 130px;
+}
+
+.orgchart.l2r .node, .orgchart.r2l .node {
+  width: 50px;
+  height: 130px;
+}
+
+.orgchart .node>.spinner {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  vertical-align: middle;
+  font-size: 30px;
+  color: rgba(68, 157, 68, 0.8);
+}
+
+.orgchart .ghost-node {
+  position: fixed;
+  left: -10000px;
+  top: -10000px;
+}
+
+.orgchart .ghost-node>* {
+  fill: #ffffff;
+  stroke: #bf0000;
+}
+
+.orgchart .node.allowedDrop {
+  border-color: rgba(68, 157, 68, 0.9);
+}
+
+
+.orgchart.b2t .node .title {
+  transform: rotate(-180deg);
+  transform-origin: center bottom;
+}
+
+.orgchart.l2r .node .title {
+  transform: rotate(-90deg) translate(-40px, -40px) rotateY(180deg);
+  transform-origin: bottom center;
+  width: 120px;
+}
+
+.orgchart.r2l .node .title {
+  transform: rotate(-90deg) translate(-40px, -40px);
+  transform-origin: bottom center;
+  width: 120px;
+}
+
+.orgchart .node .content {
+  width: 100%;
+  height: 20px;
+  font-size: 11px;
+  line-height: 18px;
+  border-radius: 0 0 4px 4px;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.orgchart.b2t .node .content {
+  transform: rotate(180deg);
+  transform-origin: center top;
+}
+
+.orgchart.l2r .node .content {
+  transform: rotate(-90deg) translate(-40px, -40px) rotateY(180deg);
+  transform-origin: top center;
+  width: 120px;
+}
+
+.orgchart.r2l .node .content {
+  transform: rotate(-90deg) translate(-40px, -40px);
+  transform-origin: top center;
+  width: 120px;
+}
+
+.orgchart.noncollapsable .node .edge {
+  display: none;
+}
+
+.orgchart .node .verticalEdge {
+  width: calc(100% - 10px);
+  left: 5px;
+}
+
+.orgchart .node .topEdge {
+  top: -4px;
+}
+
+.orgchart .node .bottomEdge {
+  bottom: -4px;
+}
+
+.orgchart .node .horizontalEdge {
+  width: 15px;
+  height: calc(100% - 10px);
+  top: 5px;
+}
+
+.orgchart .node .rightEdge {
+  right: -4px;
+}
+
+.orgchart .node .leftEdge {
+  left: -4px;
+}
+
+.orgchart .node .horizontalEdge::before {
+  position: absolute;
+  top: calc(50% - 7px);
+}
+
+.orgchart .node .rightEdge::before {
+  right: 3px;
+}
+
+.orgchart .node .leftEdge::before {
+  left: 3px;
+}
+
+.oc-export-btn[disabled] {
+  cursor: not-allowed;
+  filter: alpha(opacity=30);
+  box-shadow: none;
+  opacity: 0.3;
+}
+
+.orgchart~.mask {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 999;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.orgchart~.mask .spinner {
+  position: absolute;
+  top: calc(50% - 54px);
+  left: calc(50% - 54px);
+  color: rgba(255,255,255,0.8);
+  font-size: 108px;
+}
+
+.orgchart .node {
+  transition: all 0.3s;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+
+.orgchart .slide-down {
+  opacity: 0;
+  top: 40px;
+}
+
+.orgchart.l2r .node.slide-down, .orgchart.r2l .node.slide-down {
+  top: 130px;
+}
+
+.orgchart .slide-up {
+  opacity: 0;
+  top: -40px;
+}
+
+.orgchart.l2r .node.slide-up, .orgchart.r2l .node.slide-up {
+  top: -130px;
+}
+
+.orgchart .slide-right {
+  opacity: 0;
+  left: 130px;
+}
+
+.orgchart.l2r .node.slide-right, .orgchart.r2l .node.slide-right {
+  left: 40px;
+}
+
+.orgchart .slide-left {
+  opacity: 0;
+  left: -130px;
+}
+
+.orgchart.l2r .node.slide-left, .orgchart.r2l .node.slide-left {
+  left: -40px;
+}
+
+//------------------------------------//
+// Emory Branding on Orgchart         //
+//------------------------------------//
+ #chart-container {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+  background-color:$platinum;
+  border: 1px solid $timberwolf;
+}
+
+.orgchart {
+
+    display: inline-block;
+    min-height: 200px;
+    min-width: 200px;
+    padding:$grid-gutter-width;
+    user-select: none;
+    border: 1px solid $pastel;
+    
+    // Background style
+    background-color:#fff;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.035) 10%, rgba(0, 0, 0, 0) 10%), linear-gradient(rgba(0, 0, 0, 0.035) 10%, rgba(0, 0, 0, 0) 10%);
+    background-size: 15px 15px;
+
+    // Nodes / Cards
+    .node {
+        width:auto;
+        display: inline-block;
+        padding:.5rem;
+        .title,
+        .content {
+            border-radius:0;
+            padding:1rem 2rem;
+            height:auto;
+            width:175px;
+        }
+        .title { 
+            color:#fff;
+            background-color:$brand-secondary;
+            border-color:$brand-secondary;
+
+            // Icon before title
+            .symbol {margin-right:.5rem;}
+        }
+        .content { 
+            color:$text-color;
+            background-color:$platinum;
+            border-color:$timberwolf;
+        }
+
+        // Hover effect
+        &:hover {
+            background-color: rgba(244, 238, 66, 0.5);
+            transition: .5s;
+            cursor: default;
+            z-index: 20;
+        }
+        &.focused { background-color: rgba(244, 238, 66, 0.5);}
+
+        // All button styles
+        .edge,
+        .toggleBtn {
+          color:$pumpkin;
+          @include stroke($platinum);
+          font-size:1.75rem;
+            &:hover {
+            color: lighten($pumpkin, 10%);
+            cursor:pointer;
+          }
+        }
+        
+        // Arrows that appear on hover
+        .edge {
+            position:absolute;
+            transition: .2s;
+        }
+
+        // Toggle button
+        .toggleBtn {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    // Lines
+    tr.lines {
+        td.topLine {border-top:2px solid $brand-secondary;}
+        td.leftLine {border-left:1px solid $brand-secondary;}
+        td.rightLine {border-right:1px solid $brand-secondary;}
+        .downLine {
+            background-color: $brand-secondary;
+            margin: 0px auto;
+            height: 20px;
+            width: 2px;
+            float: none;
+        }
+    }
+    // Vertical chart items
+    .verticalNodes td::before,
+    .verticalNodes ul>li::before,
+    .verticalNodes ul>li::after {
+      border-color:$brand-secondary;
+    }
+}
+
+// Export button
+.oc-export-btn {
+    position:absolute;
+    top:5px;
+    left:5px;
+    background-color:$peanut;
+    color:#fff;
+    padding:.5rem 1rem;
+    border:0;
+    border-radius:0;
+    font-size:1.5rem;
+ 
+    // Add download icon
+    &:before {
+        content:$fa-var-download ' ';
+        font-family:'Fontawesome';
+    }
+}

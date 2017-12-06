@@ -1,0 +1,41 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Department Team") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page interior-page person-page" id="page">
+    {{> atoms-background }}
+	<main role="main">
+		<div class="container">
+           
+           <!-- People List -->
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>People Page - Departments, Clubs, Groups</h1>
+                    {{> atoms-paragraph }}
+                    {{> organisms-people }}
+                </div>
+                <div class="col-sm-4">
+                    <section class="sidebar">
+                        <h2 class="heading-bg">Sidebar Nav</h2>
+                        {{> molecules-nav:nav-stacked }}
+                    </section>
+                </div>
+            </div>
+
+            <!-- orgchart.js -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Organizational Chart</h2>
+                    <p>List and organize all employees in a department using <a href="https://github.com/dabeng/OrgChart">jQuery OrgChart on Github</a>.</p>
+                    {{> organisms-orgchart }}
+                </div>
+            </div>
+		</div>
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

@@ -1,0 +1,285 @@
+{
+  
+  "svgColor": "#002878",
+  
+  "includesPath": "../../_includes/",
+  "title": "Basic Title",
+  "pageTitle": "Page title",
+  "pageSubtitle": "Page Subtitle",
+  "message": "This is a basic message.",
+  "icon": "question-circle",
+  "href": "#",
+  "hrefExternal": "target='_blank' rel='noopener'",
+  "img": {
+    "avatar": {
+      "src": "http://via.placeholder.com/100x100",
+      "alt": "100x100 Avatar"
+    },
+    "square": {
+      "src": "http://via.placeholder.com/300",
+      "alt": "300x300 Square"
+    },
+    "rectangle": {
+      "src": "http://via.placeholder.com/400x300",
+      "alt": "400x300 Rectangle"
+    },
+    "landscape-4x3": {
+      "src": "http://via.placeholder.com/400x300",
+      "alt": "4x3 Image"
+    },
+    "landscape-16x9": {
+      "src": "http://via.placeholder.com/640x360",
+      "alt": "16x9 Image"
+    }
+  },
+  "navbarStyle": "default",
+  "navbarRowTop": "secondary",
+  "navbarRowBottom": "primary",
+  "carousel": "carousel",
+    "topic": {
+      "academics": {
+        "title": "Academics",
+        "color": "#002878",
+        "href": "http://news.emory.edu/tags/category/academics/index.html"
+      },
+      "arts-culture": {
+        "title": "Arts & Culture",
+        "color": "#004b97",
+        "href": "http://news.emory.edu/tags/category/arts_and_culture/index.html"
+      },
+      "community": {
+        "title": "Community",
+        "color": "#007ebf",
+        "href": "http://news.emory.edu/tags/category/community/index.html"
+      },
+      "events": {
+        "title": "Events",
+        "color": "#ffb200",
+        "href": "http://news.emory.edu/tags/category/events/index.html"
+      },
+      "health": {
+        "title": "Health",
+        "color": "#b17900",
+        "href": "http://news.emory.edu/tags/category/health/index.html"
+      },
+      "humanities": {
+        "title": "Humanities",
+        "color": "#50b7e4",
+        "href": "http://news.emory.edu/tags/category/humanities/index.html"
+      },
+      "international": {
+        "title": "International",
+        "color": "#327b8c",
+        "href": "http://news.emory.edu/tags/category/international/index.html"
+      },
+      "philanthropy": {
+        "title": "Philanthropy",
+        "color": "#00843a",
+        "href": "http://news.emory.edu/tags/category/philanthropy/index.html"
+      },
+      "politics": {
+        "title": "Politics",
+        "color": "#00846a",
+        "href": "http://news.emory.edu/tags/category/politics/index.html"
+      },
+      "religion-ethics": {
+        "title": "Religion & Ethics",
+        "color": "#5b7c00",
+        "href": "http://news.emory.edu/tags/category/religion_and_ethics/index.html"
+      },
+      "research": {
+        "title": "Research",
+        "color": "#da5f00",
+        "href": "http://news.emory.edu/tags/category/research/index.html"
+      },
+      "science": {
+        "title": "Science",
+        "color": "#e31b23",
+        "href": "http://news.emory.edu/tags/category/science/index.html"
+      },
+      "service": {
+        "title": "Service & Volunteering",
+        "color": "#d500c9",
+        "href": "http://news.emory.edu/tags/category/service_and_volunteering/index.html"
+      },
+      "student-life": {
+        "title": "Student & Campus Life",
+        "color": "#7300ea",
+        "href": "http://news.emory.edu/tags/category/student_and_campus_life/index.html"
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "color": "#6e2e69",
+        "href": "http://news.emory.edu/tags/category/sustainability/index.html"
+      },
+      "university": {
+        "title": "University",
+        "color": "#222222",
+        "href": "http://news.emory.edu/tags/category/university/index.html"
+      }
+  },
+  "tooltipPlacement": "auto",
+  "popoverPlacement": "top",
+  "tagCloud": "Related Tags",
+  "label": "Label",
+  "meta": "Meta info",
+  "headline": "A generic headline about anything",
+  "excerpt": "Quickly implement enterprise benefits after state of the art core competencies.",
+  "button": "Button",
+  "btnStyle": "btn-primary",
+  "input": "text",
+  "placeholder": "Placeholder...",
+  "url": "#",
+  "description": {
+    "short": "Phosfluorescently impact next-generation initiatives for enterprise-wide.",
+    "medium": "Enthusiastically disintermediate vertical growth strategies vis-a-vis fully tested mindshare. Assertively develop granular.",
+    "long": "Continually pursue error-free convergence whereas 24/7 e-services. Completely mesh strategic internal or 'organic' sources vis-a-vis integrated communities. Uniquely."
+  },
+  "fullName": "Junius Koolen",
+  "name": {
+    "first": "Junius",
+    "firsti": "J",
+    "middle": "Marius",
+    "middlei": "M",
+    "last": "Koolen",
+    "lasti": "K"
+  },
+  "year": {
+    "long": "2013",
+    "short": "13"
+  },
+  "month": {
+    "long": "January",
+    "short": "Jan",
+    "digit": "01"
+  },
+  "dayofweek": {
+    "long": "Sunday",
+    "short": "Sun"
+  },
+  "day": {
+    "long": "01",
+    "short": "1",
+    "ordinal": "st"
+  },
+  "hour": {
+    "long": "06",
+    "short": "6",
+    "military": "06",
+    "ampm": "am"
+  },
+  "minute": {
+    "long": "20",
+    "short": "20"
+  },
+  "seconds": "31",
+  "author" : {
+		"first-name": "Author",
+		"last-name": "Name"
+	},
+  "address": {
+    "primary": {
+      "street": "201 Dowman Drive",
+      "zip": "Atlanta, GA 30322",
+      "href": "https://goo.gl/maps/B8jrPnCj87S2",
+      "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.7668108165362!2d-84.32618758433682!3d33.79251948067738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f506f7808a4f1d%3A0x58d57a6237dd9c55!2sEmory+University!5e0!3m2!1sen!2sus!4v1497530147734"
+    },
+    "newsCenter": {
+      "street": "1762 Clifton Road, Plaza 1000",
+      "zip": "Atlanta, GA 30322",
+      "href": "https://goo.gl/maps/M28CbdNBdsE2",
+      "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13263.416354781048!2d-84.33764286660028!3d33.790265939329714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f506f54e42bbb7%3A0x8ca5b9f5417ad9b0!2s1762+Clifton+Rd%2C+Atlanta%2C+GA+30329!5e0!3m2!1sen!2sus!4v1497535540864"
+    },
+    "euHospital": {
+      "street": "1364 Clifton Rd NE",
+      "zip": "Atlanta, GA 30322",
+      "href": "https://goo.gl/maps/4vSs9tX9dNo",
+      "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9378.575385146103!2d-84.33222219214386!3d33.79096212933669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x154805c445ec7fc7!2sEmory+University+Hospital!5e0!3m2!1sen!2sus!4v1497535662208"
+    }
+  },
+  "contact": {
+    "primary": {
+      "name": "Emory University",
+      "email": "",
+      "phone": "404-727-6123",
+      "fax": "",
+      "website": "http://emory.edu"
+    },
+    "newsCenter": {
+      "name": "Emory News Center",
+      "email": "news@emory.edu",
+      "phone": "404-727-6216",
+      "fax": "404-727-0646",
+      "website": "http://news.emory.edu" 
+    },
+    "euHospital": {
+      "name": "Emory Hospital",
+      "email": "webadmin@emoryhealthcare.org",
+      "phone": "404-712-2000",
+      "website": "http://www.emoryhealthcare.org" 
+    }
+  },
+  "socialMedia": {
+    "facebook": {
+      "class": "facebook",
+      "href": "http://www.facebook.com/EmoryUniversity",
+      "title": "Facebook"
+    },
+    "twitter": {
+      "class": "twitter",
+      "href": "http://twitter.com/emoryuniversity",
+      "title": "Twitter"
+    },
+    "snapchat": {
+      "class": "snapchat",
+      "href": "http://college.emory.edu/snapchat",
+      "title": "Snapchat"
+    },
+    "instagram": {
+      "class": "instagram",
+      "href": "http://instagram.com/emoryuniversity",
+      "title": "Instagram"
+    },
+    "youtube": {
+      "class": "youtube",
+      "href": "http://www.youtube.com/EmoryUniversity",
+      "title": "YouTube"
+    },
+    "googleplus": {
+      "class": "googleplus",
+      "href": "https://plus.google.com/+emoryuniversity/",
+      "title": "Google +"
+    },
+    "linkedin": {
+      "class": "linkedin",
+      "href": "https://www.linkedin.com/edu/emory-university-18152",
+      "title": "LinkedIn"
+    },
+    "itunes": {
+      "class": "itunes",
+      "href": "http://it.emory.edu/itunesu/",
+      "title": "iTunes"
+    },
+    "rss": {
+      "class": "rss",
+      "href": "http://feeds.feedburner.com/emory/combined",
+      "title": "RSS Feed"
+    }
+  },
+  "heroImage" : "http://template.emory.edu/160-over-90/public/img/components/block/home/1.jpg",
+  "lead" : "Lead text is larger than other text and gives an alluring introduction to new content.",
+	"hero": true,
+	"emergency" : false,
+	"touts" : [
+		{ },
+		{ },
+		{ }
+	],
+	"latest-posts" : [
+		{ },
+		{ },
+		{ },
+		{ },
+		{ }
+	]
+}

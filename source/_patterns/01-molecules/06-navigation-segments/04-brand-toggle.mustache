@@ -1,0 +1,24 @@
+<div class="navbar-header">
+
+    <!-- Mobile toggle button -->
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button><!-- /.navbar-toggle -->
+
+    <!-- Branding Logo -->
+    <a class="navbar-brand" href="#">
+        <span class="sr-only">Click to return to Emory.edu homepage</span>
+        <div class="{{ logoVisibility }}">
+            {{> atoms-logo }}
+        </div>
+        {{# switch }}
+        <div class="hidden-xs hidden-lg">
+            {{> atoms-logo-vertical }}
+        </div>
+        {{/ switch }}
+    </a><!-- /.navbar-brand -->
+
+</div><!-- /.navbar-header -->

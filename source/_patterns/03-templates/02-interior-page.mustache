@@ -1,0 +1,22 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Interior Page") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page interior-page" id="page">
+	{{> atoms-background }}
+	<main role="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-1 col-md-8 col-md-push-2">
+					{{> organisms-interior-page-body }}
+				</div>
+			</div>
+		</div>
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

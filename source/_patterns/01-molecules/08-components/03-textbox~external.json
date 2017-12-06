@@ -1,0 +1,9 @@
+{
+    "styleModifier": "external",
+    "externalBtn": true,
+    "textboxLabel":  true,
+    "label": "The Washington Post",
+    "headline": "An external news article headline",
+    "textboxMeta": true,
+    "meta": "In the News"
+}

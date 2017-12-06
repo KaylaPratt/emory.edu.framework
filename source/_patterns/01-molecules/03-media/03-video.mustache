@@ -1,0 +1,20 @@
+<div class="{{ styleModifier }}">
+    
+    <video 
+        autoplay
+        loop
+        muted
+        controls
+        preload="metadata"
+        poster="http://via.placeholder.com/500x300?text=Video+Placeholder">
+        
+        <source src="{{ includesPath }}images/media/bawk-bawk.mp4" type="video/mp4">
+
+        Your browser does not support HTML5 <code>video</code>
+    </video>
+
+    {{# videoCaption }}
+    <p>{{ excerpt }}</p>
+    {{/ videoCaption }}
+    
+</div>

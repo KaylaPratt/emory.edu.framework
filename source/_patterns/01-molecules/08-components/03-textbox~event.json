@@ -1,0 +1,10 @@
+{
+    "styleModifier": "event",
+    "textboxLabel":  true,
+    "label": "Tomorrow",
+    "headline": "This is a cool upcoming event",
+    "textboxExcerpt": true,
+    "excerpt": "Monotonectally productize professional scenarios through extensive web-readiness.",
+    "textboxMeta": true,
+    "meta": "Saturday"
+}

@@ -1,0 +1,36 @@
+<!-- Secondary Links -->
+<ul class="nav navbar-nav">
+    <li><a href="#">Schools</a></li>
+    <li><a href="#">Libraries</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Give</a></li>
+</ul><!-- /.nav -->
+
+<!-- Search Form -->
+{{> molecules-navbar-search:nav-primary|navbar-right(searchIconColor: "white")}}
+
+<!-- Dropdown toggle Information -->
+<ul class="nav navbar-nav nav-primary navbar-right">
+    <!-- Dropdown Item -->
+    <li role="presentation" class="dropdown">
+        
+        <!-- Dropdown toggle button -->
+        <button
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false">
+            Information For
+        </button>
+
+        <!-- Dropdown list -->
+        <ul class="dropdown-menu block-list">
+            {{# listItems.four }}
+            <li role="presentation"><a href="#">{{ list.short }}</a></li>
+            {{/ listItems.four }}
+        </ul>
+
+    </li><!-- /.dropdown -->
+</ul><!-- /.nav -->

@@ -1,0 +1,191 @@
+//------------------------------------//
+// BOOTSTRAP CAROUSEL                 //
+//------------------------------------//
+.carousel {
+    margin-bottom:calc(#{$grid-gutter-width} / 2);
+    max-height:900px;
+    background-color:$raisin;
+    // Makes images full width
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        margin:0 auto; 
+    }
+    // Remove <ul> <ol> styles
+    .carousel-inner {margin:0; padding:0;}
+
+    //------------------------------------//
+    // CAPTIONS                           //
+    //------------------------------------//
+    .carousel-caption.carousel-caption-mini {
+        left:50%;
+        transform:translateX(-50%);
+        bottom:0;
+        text-align:left;
+        padding:calc(#{$grid-gutter-width} / 2) $grid-gutter-width;
+        width:100%;
+        background:rgba(0,0,0,.5);
+        > p,h1,h2,h3,h4,h5,h6 {line-height:initial;margin:0;}
+    }
+
+    //------------------------------------//
+    // INDICATORS                         //
+    //------------------------------------//
+    .carousel-indicators li.active{background:#fff;}
+    .carousel-indicators {
+        li,
+        &.active {
+            &:hover {background:$pumpkin;}
+        }
+    }
+
+    //------------------------------------//
+    // ARROW BUTTONS                      //
+    //------------------------------------//
+    .carousel-control {
+        border:none;
+        &:hover {cursor:pointer;} // Make obvious it's a button
+        &:focus {background-color: transparent!important;}
+    }
+}
+
+//------------------------------------//
+// FULLSCREEN CAROUSEL                //
+//------------------------------------//
+.carousel.carousel-fullscreen {
+    .carousel-inner,
+    .carousel,
+    .item,
+    .fill {
+        color:#fff;
+
+        // Fill container
+        height:100vh;
+        width:100vw;
+        background-position:center center;
+        background-size:cover;
+    }
+    .fill {
+        h1,h2,h3,h4,h5,h6 {
+            color:#fff;
+            font-family:$font-family-sans-serif;
+            
+            // Better legibility against background images
+            @include stroke(rgba(0,0,0,.5));
+        }
+        h1 {font-size:5rem;}
+        
+        // Center the content vertically
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:center;
+        position:relative;
+        &::before {
+            // Gray overlay for text legibility
+            @include gradient(rgba(0,0,0,.5), rgba(0,0,0,0), 'horizontal');
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            height:100vh;
+            width:100vw;
+        }
+    }
+
+    // Set the background images
+    .item {
+        &:nth-of-type(4n + 1) .fill {
+            //@include gradient($brand-secondary,$brand-primary,'vertical');
+            background-image:url('https://unsplash.it/1900/1200?image=1081');
+            
+            // Highlight color - Choose a color that complements the background color(s)
+            strong {color:$cerulian;}
+            .btn {background-color:$cerulian;}
+        }
+        &:nth-of-type(4n + 2) .fill {
+            //@include gradient($aqua,$ocean,'vertical');
+            background-image:url('https://unsplash.it/1900/1200?image=1072');
+            
+            // Highlight color - Choose a color that complements the background color(s)
+            strong {color:$gold;}
+            .btn {background-color:$gold;}
+        }
+        &:nth-of-type(4n + 3) .fill {
+            //@include gradient($evergreen,$forest,'vertical');
+            background-image:url('https://unsplash.it/1900/1200?image=1067');
+            
+            // Highlight color - Choose a color that complements the background color(s)
+            strong {color:$evergreen;}
+            .btn {background-color:$evergreen;}
+        }
+        &:nth-of-type(4n + 4) .fill {
+            //@include gradient($magenta,$royal,'vertical');
+            background-image:url('https://unsplash.it/1900/1200?image=1002');
+            
+            // Highlight color - Choose a color that complements the background color(s)
+            strong {color:$pumpkin;}
+            .btn {background-color:$pumpkin;}
+        }
+        .carousel__arrow {
+            // Next button - sits at right center of page
+            color:#fff;
+            font-size:3rem;
+            padding:1rem 2rem;
+            position:absolute;
+            top:50%;
+            right:30px;
+            transform:translateY(-50%);
+            &:hover {
+                // Make obvious it's a button
+                cursor:pointer;
+                background:rgba(255,255,255,.25);
+            }
+            &:before {
+                content:$fa-var-angle-double-right;
+                font-family:'Fontawesome';
+            }
+        }
+    }
+}
+
+//------------------------------------//
+// VERTICAL CAROUSEL                  //
+//------------------------------------//
+.carousel.carousel-vertical {
+    .item {
+        .carousel__arrow {
+        // Next button - sits at bottom center of page
+        top:auto;
+        right:auto;
+        bottom:30px;
+        left:50%;
+        transform:translate(-50%, 0);
+            &:before {content:$fa-var-angle-double-down;}
+        }
+    }
+
+    // Animate left to right
+    .carousel-inner > .item.next ,  .carousel-inner > .item.active.right{ transform: translate3d(0, 100%, 0); -webkit-transform: translate3d(0, 100%, 0); -ms-transform: translate3d(0, 100%, 0); -moz-transform: translate3d(0, 100%, 0); -o-transform: translate3d(0, 100%, 0);  top: 0;}
+    .carousel-inner > .item.prev ,.carousel-inner > .item.active.left{ transform: translate3d(0,-100%, 0); -webkit-transform: translate3d(0,-100%, 0);  -moz-transform: translate3d(0,-100%, 0);-ms-transform: translate3d(0,-100%, 0); -o-transform: translate3d(0,-100%, 0); top: 0;}
+    .carousel-inner > .item.next.left , .carousel-inner > .item.prev.right , .carousel-inner > .item.active{transform:translate3d(0,0,0); -webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);; -moz-transform:translate3d(0,0,0); -o-transform:translate3d(0,0,0); top:0;}
+    
+    // Make indicators vertical
+    .carousel-indicators li{display:block; margin-bottom:5px; border:1px solid #fff; }
+    .carousel-indicators li.active{margin-bottom:5px;}
+    .carousel-indicators {
+        position:absolute;
+        top:0;
+        bottom:0;
+        margin:auto;
+        height:20px;
+        right:10px; left:auto;
+        width:auto;
+    }
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){}
+@media(min-width:$screen-sm-min){}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){}

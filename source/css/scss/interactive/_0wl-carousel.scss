@@ -1,0 +1,77 @@
+//------------------------------------//
+// OWL CAROUSEL DEFAULTS              //
+//------------------------------------//
+.owl-carousel {margin:0;padding:0;}
+.owl-nav,
+.owl-dots {
+	// Center the navigation components
+	width:100%;
+	margin:0 auto;
+	display:flex;
+	flex-flow:row nowrap;
+	align-items:center;
+	position:relative;
+}
+.owl-nav {
+	// Make navigation arrows on either side of container
+	color:$brand-secondary;
+	font-size:3rem;
+	justify-content:space-between;
+	.owl-prev,
+	.owl-next {
+		padding:1rem;
+		&:hover {color:$pumpkin;}
+	}
+}
+.owl-dots {
+	// Center the navigation dots
+	justify-content:center;
+	position:relative;
+	.owl-dot {
+		display:inline-block;
+		background: none repeat scroll 0 0 $pastel;
+	   	border-radius: 20px;
+		display: block;
+		height: 12px;
+		margin: 5px;
+		width: 12px;
+		&.active {background-color:$brand-secondary;}
+		&:hover {background-color:$pumpkin;}
+	}
+}
+
+//------------------------------------//
+// CUSTOM HTML STYLES 			      //
+//------------------------------------//
+.owl-carousel__item {
+	background:$platinum;
+	display:block;
+	.owl-carousel__textarea {
+		padding:2rem;
+		.owl-carousel__title {
+			background:$brand-secondary;
+            font-family:$font-family-sans-serif;
+            letter-spacing:.15rem;
+			color:#fff;
+			text-transform:uppercase;
+			font-size:1.5rem;
+			display:inline-block;
+			padding:.5rem 1rem;
+		}
+	}
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+	// Add space between dots and carousel
+	.owl-dots {top:10px;}
+}
+@media(min-width:$screen-sm-min){
+    .owl-dots {
+	// Pull dots upward to be aligned with nav arrows
+	width:50%;
+	top:-40px;
+	}
+}

@@ -1,0 +1,78 @@
+.social-media {
+    
+    // Individual Buttons
+    .btn {
+        margin-bottom:3px;
+        border:none;
+        padding:0;
+        text-align:center;
+        text-decoration:none;
+    }
+
+    // Button Sizes
+    .btn {
+        // Default Size
+        font-size: 2rem;
+        width:40px;
+        height:35px;
+        line-height: 35px;
+    }
+    .btn.btn-lg,
+    &.btn-group.btn-group-lg .btn {
+        // Large size
+        font-size: 3rem;
+        width:50px;
+        height:45px;
+        line-height: 45px;
+    }
+    .btn.btn-sm,
+    &.btn-group.btn-group-sm .btn {
+        // Small size
+        font-size: 1.25rem;
+        width:30px;
+        height:25px;
+        line-height: 25px;
+    }
+
+    // Hover effects
+    .btn:hover {
+        filter:brightness(1);
+        transform:scale(1.05);
+    }
+}
+
+//------------------------------------//
+// SOCIAL MEDIA                       //
+//------------------------------------//
+.btn-twitter    {@include icon($twitter,#fff,'\f099');}     // fa-twitter
+.btn-facebook   {@include icon($facebook,#fff,'\f09a');}    // fa-facebook
+.btn-instagram  {@include icon($instagram,#fff,'\f16d');}   // fa-instagram
+.btn-itunes     {@include icon($raisin,#fff,'\f179');}      // fa-apple
+.btn-youtube    {@include icon($youtube,#fff,'\f167');}     // fa-youtube
+.btn-linkedin   {@include icon($linkedin,#fff,'\f0e1');}    // fa-linkedin
+.btn-googleplus {@include icon($googleplus,#fff,'\f0d5');}  // fa-google-plus
+.btn-reddit     {@include icon($reddit,#fff,'\f281');}      // fa-reddit-alien
+.btn-print      {@include icon($timberwolf,$raisin,'\f02f');} // fa-print
+.btn-email      {@include icon($timberwolf,$raisin,'\f0e0');} // fa-envelope
+.btn-url        {@include icon($timberwolf,$raisin,'\f0c1');} // fa-link
+.btn-copy       {@include icon($timberwolf,$raisin,'\f24d');} // fa-clone
+.btn-more       {@include icon($timberwolf,$raisin,'\f142');} // fa-sllipsis-v
+.btn-share      {@include icon($timberwolf,$raisin,'\f1e0');} // fa-share-alt
+.btn-snapchat   {@include icon($snapchat,#fff,'\f2ac');     // fa-snapchat
+    @include stroke($raisin); // Icon Legibility 
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    .social-media .btn {
+        width:35px;
+        height:30px;
+        line-height:30px;
+        font-size:1.5rem;
+    }
+}
+@media(min-width:$screen-sm-min){}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){}

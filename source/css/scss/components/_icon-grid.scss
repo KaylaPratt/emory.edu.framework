@@ -1,0 +1,72 @@
+.icon-grid {
+    text-align:center;
+    
+    // Breathing room between icon and info
+    .icon-grid__icon,
+    .icon-grid__info {
+        margin:1rem auto;
+        padding:1rem 0;
+    }
+    
+    .icon-grid__icon {
+        width:100%;
+        overflow:hidden;
+        position:relative;
+        img {max-width:75%;}
+    }
+
+    // The text that describes the icon
+    .icon-grid__info {
+        text-transform:uppercase;
+        color:$brand-secondary;
+        font-weight:bold;
+        font-size:1.5rem;
+        letter-spacing:.15rem;
+    }
+
+    // Decorative line linking icon and info
+    .icon-grid__item {
+        .icon-grid__icon:after {
+            position:absolute;
+            left:50%;
+            transform:translateX(-50%);
+            content:"";
+            height:45px;;
+            width:2px;
+            background:$gold;
+        }
+        
+        // Every other item has flipped decorative line
+        &:nth-of-type(odd) .icon-grid__icon {
+            border-bottom:2px solid $gold;
+            padding-bottom:6rem;
+            &:after {bottom:0;}
+        }
+        &:nth-of-type(even) .icon-grid__icon {
+            border-top:2px solid $gold;
+            padding-top:6rem;
+            &:after {top:0;}
+        }
+    }
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){}
+@media(min-width:$screen-sm-min){
+    .icon-grid {
+        // Breathing room between icon and info
+        .icon-grid__icon,
+        .icon-grid__info {
+            margin:$grid-gutter-width auto;
+            padding:$grid-gutter-width 0;
+        }
+        .icon-grid__info {
+            // The text that describes the icon
+            font-size:2rem;
+        }
+    }
+}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){}

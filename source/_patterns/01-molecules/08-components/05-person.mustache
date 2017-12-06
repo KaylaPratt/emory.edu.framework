@@ -1,0 +1,67 @@
+<div class="person person-{{ styleModifier }}">
+    
+    <!-- Basic info and photo -->
+    <div class="person__wrap">
+        
+        <!-- Profile photo -->
+        <div class="person__img">
+            {{> atoms-avatar }}
+        </div>
+        
+        <!-- Person text info -->
+        <div class="person__info">
+            
+            <!-- Name and title -->
+            <div class="heading-group">
+                <span class="person__name">{{ name.first }} {{ name.firsti }} {{name.last }}</span>
+                <span class="person__title">Primary Technical Specialist</span>
+            </div><!-- /.heading-group -->
+            <p class="person__dept">Marketing &amp; Communications</p>
+            
+            <!-- Contact information -->
+            <div class="person__contact">
+                
+                <!-- Phone and Email -->
+                <div>
+                    <a class="person__phone" href="tel:+01-{{ contact.primary.phone }}" title="Click only to dial on your mobile phone.">{{ contact.primary.phone }}</a>
+                    <br />
+                    <a class="person__email" href="mailto:#">jkoolen@emory.edu</a>
+                </div>
+                
+                {{# extraInfo }}
+                <!-- Additional information such as social media accounts and personal website -->
+                <div>
+                    <div class="social-media">
+                        <a href="{{ socialMedia.twitter.href }}" class="btn btn-sm btn-{{ socialMedia.twitter.class }}" title="{{ socialMedia.twitter.title }}">
+                            <span class="sr-only">{{ socialMedia.twitter.title }}</span>
+                        </a>
+                        <a href="{{ socialMedia.facebook.href }}" class="btn btn-sm btn-{{ socialMedia.facebook.class }}" title="{{ socialMedia.facebook.title }}">
+                            <span class="sr-only">{{ socialMedia.facebook.title }}</span>
+                        </a>
+                        <a href="{{ socialMedia.instagram.href }}" class="btn btn-sm btn-{{ socialMedia.instagram.class }}" title="{{ socialMedia.instagram.title }}">
+                            <span class="sr-only">{{ socialMedia.instagram.title }}</span>
+                        </a>
+                        <a href="{{ socialMedia.linkedin.href }}" class="btn btn-sm btn-{{ socialMedia.linkedin.class }}" title="{{ socialMedia.linkedin.title }}">
+                            <span class="sr-only">{{ socialMedia.linkedin.title }}</span>
+                        </a>
+                    </div>
+                </div>
+                {{/ extraInfo }}
+            </div><!-- /.person__contact -->
+        </div><!-- /.person__info -->
+
+    </div><!-- /.person__wrap -->
+    
+    {{# personBio }}
+    <!-- Add this section for a lengthy biography -->
+    <div class="person__bio">
+        <h2>More about {{ name.first }}</h2>
+        {{> atoms-paragraph }}
+        {{> molecules-accordion }} 
+        <h3>Hobbies and Passions</h3>
+        <p>{{ description.short }}</p>
+        {{> atoms-ordered }}
+    </div><!-- /.person__bio -->
+    {{/ personBio }}
+
+</div><!-- /.person -->

@@ -1,0 +1,65 @@
+/*
+* When focused, elements need to have
+* a high contrast and be emphasized
+* in a very obvious way so that those
+* who do not have typical eyesight
+* capabilities can easily tab around
+* and understand what they have
+* currently selected on the webpage
+*/
+
+body {
+
+    // Links should be obvious
+    a {text-decoration:underline;}
+    a,button {
+        &:focus {
+            outline:1px!important;
+            border-color:$aqua!important;
+            background-color:$pumpkin!important;
+            color:#fff!important;
+            text-decoration:none!important;
+        }
+    }
+
+    // Focus Emory logo
+    .navbar-brand {
+        border:3px solid transparent!important;
+        &:focus {
+            background-color:$raisin!important;
+            border-color:$aqua!important;
+        }
+    }
+
+    // Focus Navigation elements
+    .navbar,
+    .nav {
+        .dropdown-toggle:focus {
+            background-color:$platinum!important;
+            color:inherit!important;
+            border-color:$aqua!important;
+            border-width:3px!important;
+        }
+        .nav-primary .dropdown-toggle:focus,
+        &.navbar-news-center .dropdown-toggle:focus {
+            background-color:$brand-secondary!important;
+            color:#fff!important;
+            border-width:5px!important;
+        }
+    }
+
+    // Focus inputs
+    input,
+    select,
+    option,
+    textarea {
+        &:focus {
+            background-color:#fff!important;
+            color:$text-color!important;
+        }
+    }
+
+    // Data-toggle in accordions
+    .panel-group button[data-toggle]:focus {background:$peanut!important;}
+
+}

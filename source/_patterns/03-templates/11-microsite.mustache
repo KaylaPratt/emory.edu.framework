@@ -1,0 +1,19 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Microsite Example") }}
+
+<!-- Page content -->
+<div id="page" class="page microsite-page">
+
+    <!-- Header -->
+    {{> organisms-header-microsite }}
+    <div role="presentation" class="decor">
+        {{> atoms-diagonal-line }}
+    </div>
+    <div role="presentation" class="decor">
+        {{> atoms-diagonal-line }}
+    </div>
+
+    <main role="main">
+        {{> organisms-fullscreen-carousel:vertical }}
+    </main>
+</div>

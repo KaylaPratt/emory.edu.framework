@@ -1,0 +1,32 @@
+<!-- Large image overlapping header -->
+<div class="overlap">{{> atoms-landscape-16x9 }}</div>
+
+<!-- Introduction -->
+<section>{{> molecules-block-intro }}</section>
+
+<!-- Marketing with Call to Actions -->
+<section>
+    {{> organisms-textbox-cta }}
+    {{> atoms-paragraph }}
+    {{> molecules-modal(headline: "So you decided to click the Modal", message: "Dramatically extend resource sucking methodologies and adaptive supply chains. Appropriately actualize distinctive products without client-focused value. Conveniently grow extensive sources vis-a-vis virtual partnerships. Synergistically optimize front-end outside the box'.") }}
+</section>
+
+<!-- Featured News -->
+<section>
+    <h2 class="underline">Student News:</h2>
+    {{> organisms-textbox-articles }}
+    {{> organisms-textbox-external }}
+
+    <h5 class="heading-bg">Featured Events <a href="#" class="pull-right">View All</a></h5>
+    <div class="row">
+        <div class="col-md-4">
+            {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true)}}
+        </div><!-- /column -->
+        <div class="col-md-4">
+            {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true)}}
+        </div><!-- /column -->
+        <div class="col-md-4">
+            {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true)}}
+        </div><!-- /column -->
+    </div><!-- /.row -->
+</section>

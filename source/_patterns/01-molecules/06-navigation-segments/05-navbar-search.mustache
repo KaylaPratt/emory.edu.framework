@@ -1,0 +1,39 @@
+<form class="navbar-nav navbar-form navbar-search {{ styleModifier }}">
+    
+    <label for="siteSearch" class="sr-only">Enter search query</label>
+    
+    <!-- Toggle Search Button and Input -->
+    <div class="input-group">
+        
+        <!-- Search input that toggles open on desktop -->
+        <input
+            type="text"
+            id="siteSearch"
+            class="form-control nav-search toggle-reveal__horizontal"
+            placeholder="Search"
+            aria-label="Enter search query"/>
+        
+        <!-- Desktop-only toggle button for search -->
+        <span class="input-group-btn hidden-xs">
+            <a
+                href="#"
+                title="Search"
+                class="btn btn-primary toggle-button">
+                <span class="fa fa-search" aria-hidden="true"></span>
+                <span class="sr-only">Toggle Search Input</span>
+            </a>
+        </span>
+
+        <!-- Only visible on mobile submit button -->
+        <span class="input-group-btn visible-xs-block hidden-sm hide-submit">
+            <input
+                type="image"
+                id="siteSearch"
+                value="Submit search query"
+                alt="Submit search query"
+                src="{{ includesPath }}images/icons/search-{{ searchIconColor }}.png?{{ cachebuster }}"/>
+        </span>
+
+    </div><!-- /.input-group -->
+
+</form><!-- /.navbar-search -->

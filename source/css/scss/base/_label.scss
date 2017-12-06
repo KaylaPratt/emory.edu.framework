@@ -1,0 +1,17 @@
+.label {
+    border-radius:0;
+    font-weight:normal;
+    text-transform:uppercase;
+    // Overwrite Bootstrap behavior
+    white-space:normal; // Let the text wrap if inside a small container
+    text-align:left;
+    padding:.5rem 1rem;
+}
+.label-heading {
+    font-size:3rem;
+    text-transform:uppercase;
+    font-family:$font-family-sans-serif;
+    letter-spacing:.15rem;
+    background:$brand-primary;
+    color:#fff;
+}

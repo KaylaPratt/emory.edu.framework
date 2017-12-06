@@ -1,0 +1,32 @@
+<!-- DEPENDENCY: _navbar.scss -->
+
+<!-- Branding -->
+<div class="nav-branding hidden-xs">
+    {{> atoms-logo }}
+</div><!-- /.nav-branding -->
+
+<!-- News Center Title -->
+<div class="news-center-title hidden-xs">
+    <span>Emory News</span>
+</div><!-- /.news-center-title -->
+
+<!-- Dropdown toggle Information -->
+<div>
+    <ul class="nav navbar-nav">
+        <!-- Dropdown Item -->
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Browse Categories
+            </a>
+            <ul class="dropdown-menu block-list">
+                {{# listItems.five }}
+                <li role="presentation"><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.five }}
+            </ul>
+        </li><!-- /.dropdown -->
+    </ul><!-- /.nav -->
+
+    <!-- Search Form -->
+    {{> molecules-navbar-search(searchIconColor: "blue")}}
+
+</div>

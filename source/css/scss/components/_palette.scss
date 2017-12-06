@@ -1,0 +1,85 @@
+.palette {
+    display:flex;
+    flex-flow:row wrap;
+    .palette__item {
+        width:25%;
+        max-width:150px;
+        background:$snow;
+        border-radius:5px;
+        border:1px solid $platinum;
+        box-sizing:border-box;
+        box-shadow: 0 1px 0 rgba(0,0,0,.25);
+        margin:0 .25rem .5rem .25rem;
+        overflow:hidden;
+        
+        // Top half has color
+        .palette__color {
+            background:#666; // Default
+            width:100%;
+            height:5rem;
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content:flex-end;
+            align-items:flex-end;
+            
+            // Name of color
+            .palette__name {
+                color:#fff;
+                font-size:1.25rem;
+                text-align:right;
+                text-transform:uppercase;
+                padding-right:1rem;
+            }
+        }
+
+        // Hex and RGB
+        .palette__info {
+            padding:1rem;
+            color:#666;
+            font-size:1rem;
+            text-align:right;
+        }
+    }
+}
+ 
+//------------------------------------//
+// PRIMARY COLORS                     //
+//------------------------------------//
+.palette.palette-primary {
+    .palette__item:nth-of-type(1) .palette__color {background:$catalina;}
+    .palette__item:nth-of-type(2) .palette__color {background:$cerulian;}
+    .palette__item:nth-of-type(3) .palette__color {background:$ocean;}
+    .palette__item:nth-of-type(4) .palette__color {background:$gold;} 
+    .palette__item:nth-of-type(5) .palette__color {background:$peanut;} 
+}
+
+//------------------------------------//
+// SECONDARY COLORS                   //
+//------------------------------------//
+.palette.palette-secondary {
+    .palette__item:nth-of-type(1) .palette__color {background:$aqua;}
+    .palette__item:nth-of-type(2) .palette__color {background:$teal;}
+    .palette__item:nth-of-type(3) .palette__color {background:$evergreen;}
+    .palette__item:nth-of-type(4) .palette__color {background:$forest;}
+    .palette__item:nth-of-type(5) .palette__color {background:$avocado;}
+    .palette__item:nth-of-type(6) .palette__color {background:$pumpkin;}
+    .palette__item:nth-of-type(7) .palette__color {background:$columbine;}
+    .palette__item:nth-of-type(8) .palette__color {background:$magenta;}
+    .palette__item:nth-of-type(9) .palette__color {background:$violet;}
+    .palette__item:nth-of-type(10) .palette__color {background:$royal;}  
+}
+
+//------------------------------------//
+// GRAYS                              //
+//------------------------------------//
+.palette.palette-gray {
+
+    // Make text dark for legibility against pale grays
+    .palette__item:not(:first-of-type) .palette__color .palette__name  {color:$raisin;}
+
+    .palette__item:nth-of-type(1) .palette__color {background:$raisin;}
+    .palette__item:nth-of-type(2) .palette__color {background:$pastel;}
+    .palette__item:nth-of-type(3) .palette__color {background:$timberwolf;}
+    .palette__item:nth-of-type(4) .palette__color {background:$platinum;}
+    .palette__item:nth-of-type(5) .palette__color {background:$snow;}
+}   

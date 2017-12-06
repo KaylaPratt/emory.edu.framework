@@ -1,0 +1,33 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Audience Page") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page interior-page audience-page" id="page">
+    {{> atoms-background }}
+	<main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    {{> organisms-audience-body }}
+                </div>
+                <div class="col-sm-4 col-lg-3 col-lg-offset-1">
+                    <section class="sidebar">
+                        <h4 class="heading-bg heading-bg-brand">Student Resources:</h4>
+                        <h5 class="heading-bg">Health &amp; Safety</h5>
+                        {{> molecules-nav:nav-stacked }}
+                        <h5 class="heading-bg">Campus Stuff</h5>
+                        {{> molecules-nav:nav-stacked }}
+                        <h5 class="heading-bg">Another One</h5>
+                        {{> molecules-nav:nav-stacked }}
+                    </section>
+                </div> 
+            </div>
+        </div>
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

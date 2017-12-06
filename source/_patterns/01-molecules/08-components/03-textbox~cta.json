@@ -1,0 +1,11 @@
+{
+    "styleModifier": "cta",
+    "image": true,
+    "textboxLabel":  true,
+    "label": "Call to Action",
+    "headline": "You're definitely going to want to click this button",
+    "textboxExcerpt": true,
+    "excerpt": "Professionally provide access to customer directed platforms without go forward intellectual capital. Proactively disseminate superior experiences rather.",
+    "blockList": true,
+    "moreBtn": true
+}

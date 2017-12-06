@@ -1,0 +1,67 @@
+<div class="panel-group" id="accordion">
+  
+  <!-- Item 1 -->
+  <div class="panel panel-primary">
+    <!-- Click to Toggle collapse/expand -->
+    <div class="panel-heading">
+      <h3>
+        <button data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" onclick="return false;">
+          <span class="panel-title">{{ headline }}</span>
+        </button>
+      </h3>
+    </div>
+
+    <!-- Body is revealed when .panel-heading is toggled -->
+    <div class="panel-collapse collapse in" id="collapseOne">
+      <div class="panel-body">
+        {{> atoms-paragraph }}
+        {{> atoms-unordered }}
+      </div>
+    </div>
+  </div>
+  <!-- /Item 1 -->
+
+  <!-- Item 2 -->
+  <div class="panel panel-primary">
+    <!-- Click to Toggle collapse/expand -->
+    <div class="panel-heading">
+      <h3>
+        <button data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" onclick="return false;">
+          <span class="panel-title">{{ headline }}</span>
+        </button>
+      </h3>
+    </div>
+
+    <!-- Body is revealed when .panel-heading is toggled -->
+    <div class="panel-collapse collapse" id="collapseTwo">
+      <div class="panel-body">
+          {{> atoms-paragraph }}
+          {{> atoms-blockquote(citation: true) }}
+          <p>{{ description.medium }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- /Item 2 -->
+
+  <!-- Item 3 -->
+  <div class="panel panel-default">
+    <!-- Click to Toggle collapse/expand -->
+    <div class="panel-heading">
+      <h3>
+        <button data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" onclick="return false;">
+          <span class="panel-title">{{ headline }}</span>
+        </button>
+      </h3>
+    </div>
+
+    <!-- Body is revealed when .panel-heading is toggled -->
+    <div class="panel-collapse collapse" id="collapseThree">
+      <div class="panel-body">
+        {{> atoms-paragraph }}
+        {{> atoms-ordered }}
+      </div>
+    </div>
+  </div>
+  <!-- /Item 3 -->
+
+</div><!-- /.panel-group -->

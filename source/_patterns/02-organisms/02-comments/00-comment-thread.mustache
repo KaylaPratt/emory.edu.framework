@@ -1,0 +1,40 @@
+<section class="comment">
+	
+	<!-- Leave a Comment form -->
+	<h2 class="comment__total"><span class="fa fa-comment" aria-hidden="true"></span> Join the conversation</h2>
+	{{> molecules-comment-form }} 
+
+	<!-- Accordion expans to show comments -->
+	<div class="panel-group" id="accordion">
+	
+		<!-- Comments List -->
+		<div class="panel panel-primary page-break">
+			
+			<!-- Click to Toggle collapse/expand -->
+			<div class="panel-heading">
+				<h3>
+					<button data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" onclick="return false;">
+						<span class="panel-title">123 Comment(s)</span>
+					</button>
+				</h3>
+			</div>
+			
+			<!-- Body is revealed when .panel-heading is toggled -->
+			<div class="panel-collapse collapse" id="collapseOne">
+				<div class="panel-body">
+					<ul class="comment__list">
+						<li><h2><span class="fa fa-comments" aria-hidden="true"></span> Comments</h2></li>
+						{{# listItems.five }}
+							{{> molecules-single-comment }} 
+						{{/ listItems.five }}
+					</ul>	
+					{{> molecules-pagination }}
+				</div>
+			</div>
+
+		</div><!-- /.panel -->
+		
+	</div><!-- /.panel-group -->
+
+</section><!-- /.comment -->
+

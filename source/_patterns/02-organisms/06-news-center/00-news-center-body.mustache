@@ -1,0 +1,128 @@
+<div class="container">
+    <div class="row">
+        
+        <!-- Introduction & Featured Content -->
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-8 overlap">
+            <section>
+                <!-- Primary Featured article that overlaps header -->
+                {{> molecules-textbox:article|landing(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "On Campus", headline: "Eight Tips for a Fresh Farmers Market Experience", excerpt: "Taste the flavors of summer at the next Emory Farmers Market. It's peak season for fuzzy, fresh Georgia peaches, and prime time for refreshing watermelon. Taste the flavors of summer at the next Emory Farmers Market. It's peak season for fuzzy, fresh Georgia peaches, and prime time for refreshing watermelon.", meta: "Emory Winship") }}
+                
+                <!-- Additional Featured Articles -->
+                <h2 class="heading-bg">Featured Articles</h2>
+                {{> molecules-textbox:article|featured(image: true, textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Arts & Culture", headline: "Art for All: Fahamu Pecou takes his painting to the people", excerpt: "The image soars high above the ground — a young man frozen in a joyful, belly-first leap, arms thrown back, a thick rainbow of birds exploding from the soles of his dark sneakers. And the message soars, too, simple and inspiring: 'Rise Above'...", meta: "Emory Report") }}
+                
+                <div class="row">
+                    <div class="col-sm-6">{{> molecules-textbox:article(textboxLabel: true, textboxExcerpt: true, textboxMeta: true) }}</div>
+                    <div class="col-sm-6">{{> molecules-textbox:article(textboxLabel: true, textboxExcerpt: true, textboxMeta: true) }}</div>
+                </div><!-- /.row -->
+                
+                <div class="row">
+                    <div class="col-sm-6">{{> molecules-textbox:article(image: true, textboxLabel: true, textboxExcerpt: true, textboxMeta: true) }}</div>
+                    <div class="col-sm-6">{{> molecules-textbox:article(image: true, textboxLabel: true, textboxExcerpt: true, textboxMeta: true) }}</div>
+                </div><!-- /.row --> 
+            </section>
+        </div><!-- column -->
+        
+        <!-- Sidebar -->
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4">
+            <section class="sidebar">
+                <h2 class="heading-bg">Latest Announcements</h2>
+                {{> molecules-textbox:article(image: true) }}
+                {{> molecules-textbox:borderless }}
+                {{> molecules-textbox:borderless }}
+            </section>
+            <section class="sidebar">
+                <h2 class="heading-bg">In the Media <a href="#" class="pull-right">View All</a></h2>
+                {{> molecules-textbox:external(textboxLabel: true, externalBtn: true, textboxMeta: true, label: "New York Times", headline: "Sam Hyde got away with it again", meta: "In the News") }}
+                {{> molecules-textbox:external(textboxLabel: true, externalBtn: true, textboxMeta: true, label: "CNN", meta: "In the News") }}
+            </section>
+        </div><!-- column -->
+    </div><!--/row -->
+
+    <!-- Carousel -->
+    <div class="row">
+        <section>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
+                <h2 class="heading-bg">Carousel because why not.</h2>
+                {{> molecules-0wl-carousel }}
+            </div><!-- column -->
+        </section>
+    </div><!-- /.row -->
+
+    <!-- Featured Events -->
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
+            <section>
+                <h2 class="heading-bg">Featured Events</h2>
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Today") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Tomorrow") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Tomorrow") }}
+                    </div>
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Monday") }}
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Tuesday") }}
+                    </div>
+                    <div class="clearfix visible-sm-block hidden-md"></div>
+                    <div class="col-sm-6 col-md-3">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Wednesday") }}
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Thursday") }}
+                    </div>
+                </div><!-- /.row -->
+            </section>
+        </div><!-- column -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+<!-- Marketing -->
+<div class="container-fluid">
+    <div class="row">
+        <section>
+        {{> organisms-marketing }}
+        </section>
+    </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+<br />
+
+<!-- Featured Topics -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12">
+            <section>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading-bg heading-bg-brand">Featured in {{ topic.humanities.title }}</h2>
+                        {{> molecules-textbox:article(image: true, textboxLabel: true, textboxMeta: true, label: "Humanities", headline: "Objectively reintermediate one-to-one processes and clicks-and-mortar supply chains") }}
+                        {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Humanities", headline: "Quickly transform fully tested process improvements and high standards") }}
+                        {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Humanities", headline: "Holisticly reinvent virtual solutions with high standards in ROI") }}
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="heading-bg heading-bg-brand">Featured in {{ topic.religion-ethics.title }}</h2>
+                        {{> molecules-textbox:article(image: true, textboxLabel: true, textboxMeta: true, label: "Religion & Ethics", headline: "Completely repurpose backward-compatible collaboration and idea-sharing after one-to-one quality") }}
+                        {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Religion & Ethics", headline: "Continually maximize backward-compatible process improvements") }}
+                        {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Religion & Ethics", headline: "Monotonectally productize team driven metrics through intuitive functionalities. Enthusiastically fashion cross-media catalysts") }}
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="heading-bg heading-bg-brand">Featured in {{ topic.student-life.title }}</h2>
+                        {{> molecules-textbox:article(image: true, textboxLabel: true, textboxMeta: true, label: "Student & Campus Life", headline: "Completely create stand-alone applications via 24/365 internal or organic sources") }}
+                        {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Student & Campus Life", headline: "Continually negotiate market-driven markets whereas leveraged results. Completely mesh bricks-and-clicks resources") }}
+                        {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Student & Campus Life", headline: "Assertively negotiate professional resources rather than") }}
+                    </div>
+                </div><!-- /.row -->
+            </section>
+        </div><!-- column -->
+    </div><!-- /.row -->
+</div><!-- /.container -->

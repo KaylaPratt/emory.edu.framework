@@ -1,0 +1,21 @@
+<nav role="navigation" aria-label="Menu">
+  <ul class="nav {{ styleModifier }}">
+    <li role="presentation" class="active"><a href="#">Active</a></li>
+    {{# listItems.three }}
+    <li><a href="#">{{ list.short }}</a></li>
+    {{/ listItems.three }}
+    <li role="presentation" class="disabled"><a href="#">Disabled</a></li>
+    {{# dropdown }}
+    <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            {{# listItems.three }}
+            <li role="presentation"><a href="#">{{ list.short }}</a></li>
+            {{/ listItems.three }}
+        </ul>
+    </li><!-- /.dropdown -->
+    {{/ dropdown }}
+  </ul><!-- /.nav -->
+</nav>

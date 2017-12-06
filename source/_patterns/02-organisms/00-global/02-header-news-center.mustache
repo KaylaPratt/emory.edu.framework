@@ -1,0 +1,39 @@
+<header role="banner" class="header headroom" >
+	<nav role="navigation" aria-label="Main Navigation" class="navbar navbar-default navbar-stacked navbar-news-center">
+		<div class="container-fluid">
+			<div class="row">
+
+				<!-- Branding -->
+				<div class="nav-branding visible-xs hidden-sm">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					{{> molecules-brand-toggle }}
+				</div>
+
+				<!-- Skip Navigation for screen readers -->
+                <a href="#mainContent" class="sr-only">Skip to main content</a>
+
+				<!-- Screen Reader anchor to main navigation -->
+				<a name="mainNav" class="sr-only"></a>
+			
+				<!-- Collapse these menus on mobile -->
+				<div class="collapse navbar-collapse js-navbar-collapse">        
+			
+					<!-- Primary Nav -->		
+					<div class="navbar-row-{{ navbarRowTop }}">
+						{{> molecules-news-center-row-secondary }}
+					</div><!-- /.navbar-row-secondary -->
+
+					<!-- Secondary Nav -->					
+					<div class="navbar-row-{{ navbarRowBottom }} row-eq-height">
+						{{> molecules-news-center-row-primary }}
+					</div><!-- /.navbar-row-primary -->
+
+				</div><!-- /.collapse -->
+		
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	</nav><!-- .navbar -->
+</header>
+
+<!-- Screen Reader anchor to main content -->
+<a name="mainContent"></a>

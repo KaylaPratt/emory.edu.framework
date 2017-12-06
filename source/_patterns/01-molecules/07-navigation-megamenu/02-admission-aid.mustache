@@ -1,0 +1,43 @@
+<!-- Dropdown Item -->
+<li class="dropdown mega-dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission &amp; Aid</a>
+    <ul class="dropdown-menu mega-dropdown-menu row">
+        
+        <!-- Nav Column -->
+        <li class="col-sm-12 col-md-6">
+            {{> atoms-landscape-16x9 }}
+        </li>
+        <li class="clearfix visible-sm-block">&nbsp;</li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4 col-md-2">
+            <ul>
+                <li class="dropdown-header"><a href="#">Admission &amp; Aid</a></li>
+                {{# listItems.six }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.six }}
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4 col-md-2">
+            <ul>
+                <li class="dropdown-header">Menu Heading</li>
+                {{# listItems.six }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.six }}
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-4 col-md-2">
+            <ul>
+                <li class="dropdown-header">Menu Heading</li>
+                {{# listItems.six }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.six }}
+            </ul>
+        </li>
+
+    </ul><!-- /.dropdown-menu -->
+</li><!-- /.dropdown -->

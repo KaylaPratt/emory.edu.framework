@@ -1,0 +1,70 @@
+<!-- Go to main navigation link for Screen Readers -->
+<a href="#mainNav" class="sr-only">Go back to main navigation</a>
+
+<footer role="contentinfo" class="footer">
+	<div class="footer-news-center">
+		<div class="container footer__wrap">
+			<div class="row">
+				
+				<div class="col-md-3 col-md-push-9">
+					<div class="row footer__brand">
+						
+						<!-- Branding -->
+						<div class="col-sm-6 col-md-12">
+							<div class=" footer__logo">
+								{{> atoms-logo }}
+							</div>
+						</div><!-- /column -->
+						
+						<!-- Address and Social Media -->
+						<div class="col-sm-6 col-md-12">
+							{{> molecules-address-news-center }}
+							{{> atoms-social-media }}
+						</div><!-- /column -->
+
+					</div><!-- /.row -->
+				</div><!-- /column -->
+				
+				<!-- Navigation -->
+				<div class="col-sm-4 col-md-3 col-md-pull-3">
+					<span class="underline">Footer Nav</span>
+					<nav>
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+					</nav>
+				</div><!-- /column -->
+				
+				<!-- Navigation -->
+				<div class="col-sm-8 col-md-6 col-md-pull-3">
+					<span class="underline">Footer Nav</span>
+					<div class="row">
+						<div class="col-sm-6">
+							<nav>
+								{{> atoms-block-list }}
+								{{> atoms-block-list }}
+								{{> atoms-block-list }}
+							</nav>
+						</div>
+						<div class="col-sm-6">
+							<nav>
+								{{> atoms-block-list }}
+								{{> atoms-block-list }}
+								{{> atoms-block-list }}
+							</nav>
+						</div>
+					</div>
+				</div><!-- /column -->
+
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</div><!-- /.footer-news-center -->
+
+	<!-- Post Footer Nav -->
+	<div class="container-fluid post-footer">
+		<nav>
+			{{> atoms-block-list }}
+			{{> atoms-block-list }}
+		</nav>
+	</div>
+</footer>

@@ -1,0 +1,18 @@
+//------------------------------------//
+// IE  HAX                            //
+//------------------------------------//
+
+// Fix logo from falling out of navbar container in mobile view
+@include only_ie11( '.navbar .logo', (height:40px) );
+@include only_ie11( '.navbar-brand', (padding:0!important) );
+
+// Remove horizontal scrollbar
+@include only_ie11( 'body', (overflow-x:hidden) );
+
+//------------------------------------//
+// SAFARI HAX                         //
+//------------------------------------//
+
+// Attach [.flex-safari] to flexbox containers to prevent flex children overlap
+.flex-safari:first-child {flex:1 0 auto;}
+.person .person__wrap:first-child {flex:1 0 auto;} // Safari sucks at flexbox

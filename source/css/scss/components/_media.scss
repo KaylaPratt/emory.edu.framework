@@ -1,0 +1,30 @@
+video,audio,figure {
+    width:100%;
+    height:auto;
+    margin-bottom:$grid-gutter-width;
+}
+
+// Media with caption
+.media {
+    font-style:italic;
+    margin-bottom:$grid-gutter-width;
+    video,audio,figure {margin-bottom:calc(#{$grid-gutter-width} / 2);}
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    .media {
+        // Make text aligned left on mobile only
+        &.pull-right,
+        &.pull-left {text-align:left;}
+    }
+}
+@media(min-width:$screen-sm-min){
+    .media {
+        // Floats
+        &.pull-right,
+        &.pull-left {width:60%;}
+    }
+}

@@ -1,0 +1,41 @@
+.landing-page {
+
+    .overlap {@include overlap(100px);}
+
+    .background.background-carousel {height:auto;}
+    
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max) {
+    .landing-page .background.background-carousel {background-image:none;}
+}
+@media(max-width:$screen-sm-max){
+    .landing-page {
+        // Make carousel fill full width on mobile
+        .carousel {top:0;}
+        .background.background-carousel {
+            background-color:#fff;
+            > .container {padding:0;}
+        } 
+    }
+}
+@media(min-width:$screen-sm-min){
+    .landing-page {
+        .background.background-carousel {height:300px;margin-bottom:50px;}
+
+        .carousel {top:50px;}
+    }
+}
+@media(min-width:$screen-md-min){
+    .landing-page {
+        .background.background-carousel {height:385px;}
+    }
+}
+@media(min-width:$screen-lg-min){
+    .landing-page {
+        .background.background-carousel {height:475px;}
+    }
+}

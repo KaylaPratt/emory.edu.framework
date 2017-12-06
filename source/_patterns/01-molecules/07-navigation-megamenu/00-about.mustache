@@ -1,0 +1,59 @@
+<!-- Dropdown Item -->
+<li class="dropdown mega-dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+    <ul class="dropdown-menu mega-dropdown-menu row">
+        
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header"><a href="#">About</a></li>
+                {{# listItems.seven }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.seven }}
+            </ul>
+        </li>
+
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header">Visit Campus</li>
+                {{# listItems.four }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.four }}
+            </ul>
+            <br />
+        </li>
+
+        <li class="clearfix visible-sm-block"></li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header">Guides to Emory</li>
+                {{# listItems.five }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.five }}
+            </ul>
+        </li>
+        
+        <!-- Nav Column -->
+        <li class="col-sm-6 col-md-3">
+            <ul>
+                <li class="dropdown-header">News &amp; Events</li>  
+                <!-- carousel -->
+                <li id="newsEvents" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- carousel item -->
+                        <div class="item active">
+                            {{> molecules-textbox:event(textboxLabel: true, textboxMeta: true) }}
+                        </div>
+                        <!-- carousel item -->
+                        <div class="item">
+                            {{> molecules-textbox:event(textboxLabel: true, textboxMeta: true) }}
+                        </div>
+                    </div>
+                </li><!-- /.carousel -->
+            </ul>
+        </li>
+    </ul><!-- /.dropdown-menu -->
+</li><!-- /.dropdown -->

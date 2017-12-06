@@ -1,0 +1,78 @@
+<!-- Go to main navigation link for Screen Readers -->
+<a href="#mainNav" class="sr-only">Go back to main navigation</a>
+
+<footer role="contentinfo" class="footer">
+	<div class="footer-primary">
+        
+		{{# footerCustomBG }}
+        <!-- Custom image goes here -->
+        <img aria-type="hidden" class="footer__custom-bg" src="https://unsplash.it/1920/1080" alt="Add alt text here but it's not necessary because it's a background image." />
+		{{/ footerCustomBG }}
+		
+		<div class="container footer__wrap">
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<div class="row">
+						
+						<!-- Branding -->
+						<div class="col-xs-6 col-sm-12">
+							<div class="footer__logo">
+								{{> atoms-logo-vertical-full }}
+							</div>
+						</div><!--/.col-xs-6 .col-sm-12 -->
+
+						<!-- Copyright -->
+						<div class="col-xs-6 col-sm-12">
+							{{> molecules-copyright }}
+							<!-- Address and Social Media -->
+							{{> molecules-address }}
+							{{> atoms-social-media:btn-group|btn-group-lg }}
+						</div><!--/column -->
+
+					</div><!--/.row -->
+				</div><!--/column -->
+
+				<!-- Primary Footer Nav -->
+				<div class="col-sm-6 col-md-3">
+					<span class="underline">Footer Nav</span>
+					<nav>
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+					</nav>
+				</div>
+
+				<div class="clearfix visible-sm-block hidden-md"></div>
+
+				<!-- Navigation -->
+				<div class="col-sm-6 col-md-3">
+					<span class="underline">Footer Nav</span>
+					<nav>
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+					</nav>
+				</div>
+				
+				<!-- Navigation -->
+				<div class="col-sm-6 col-md-3">
+					<span class="underline">Footer Nav</span>
+					<nav>
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+						{{> atoms-block-list }}
+					</nav>
+				</div><!-- /column -->
+
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</div><!-- /.footer-primary -->
+	
+	<!-- Post Footer Nav -->
+	<div class="container-fluid post-footer">
+		<nav>
+			{{> atoms-block-list }}
+			{{> atoms-block-list }}
+		</nav>
+	</div><!-- /.container-fluid -->
+</footer>

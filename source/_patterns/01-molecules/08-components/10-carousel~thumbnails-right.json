@@ -1,0 +1,10 @@
+{
+    "carousel": "carousel-thumbs",
+    "thumbnails": {},
+    "captionStyle": "mini",
+    "row": "row",
+    "pullLeft": {
+        "leftCol": "col-sm-7",
+        "rightCol": "col-sm-5"
+    }
+}

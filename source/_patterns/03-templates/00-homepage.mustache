@@ -1,0 +1,23 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Welcome to Emory") }}
+
+{{# emergency }}
+<!-- Emergency alert -->
+<div id="emergency" class="screen-only">
+	{{> molecules-alert:alert-danger|alert-solid(message: "This is an emergency alert!") }}
+</div>
+{{/ emergency }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page home-page" id="page">
+	{{> molecules-hero-image-overlap(wideImg: "hero-image-overlap__img-wide", label: "Welcome to Emory", title: "The Epicenter of What Can Be", lead: "There is rarely only one way to do something.", description: "And if there is, that just means another solution has yet to be found. We'll find it. Because at Emory, that's what we do. That's who we are. We are the challengers of what is, at the epicenter of what can be.") }}
+	<main role="main">
+		{{> organisms-homepage-body }}
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

@@ -1,0 +1,63 @@
+<!-- Large image overlapping header -->
+<div class="overlap">{{> atoms-landscape-16x9 }}</div>
+
+<!-- Main body -->
+<section>
+    {{> molecules-breadcrumbs }}
+
+    <!-- Introdcution -->
+    <h1>Even Our History is Nontraditional</h1>
+    <p class="lead">Such a simple question. Such an endless answer. He’s the Spirit of Emory—past, present, and future—in the form of a campus-roaming, mischief-making skeleton.</p>
+    <p>To try to list everything that’s helped shape Emory over the years would be an ambitious undertaking indeed. But to begin to understand the Emory Way, there are few chapters you just can’t miss. But to begin to understand the <a href="#">Emory Way</a>, there are few chapters you just can’t miss.</p>
+
+    <!-- Featured Articles -->
+    <div class="row">
+        <div class="col-sm-6">
+            {{> molecules-textbox:article(image: true, textboxExcerpt: true, textboxMeta: true) }}
+        </div><!-- /column -->
+        <div class="col-sm-6">
+            {{> molecules-textbox:article(image: true, textboxExcerpt: true, textboxMeta: true) }}
+        </div><!-- /column -->
+    </div><!-- /.row -->
+
+    <p>James W. Dooley, who borrows his first name and middle initial from the current Emory president, roams around campus wielding squirt gun he calls his “peacekeeper.” He is accompanied by a pack of hand-picked students in black suits, sunglasses, and white gloves—his bodyguards—who protect him from being unmasked (as a student attempted in the 1960s). During his week, Dooley has the power to dismiss students from class. And there’s nothing professors can do about it. Not that they’d have it any other way.</p>
+
+</section>
+
+<!-- Section with Accordion -->
+<section>
+    <h2 class="underline">Compellingly harness principle-centered web</h2>
+    <p>Just like regular maps, brain maps are useful points of reference. Scientists use them to agree on what they’re studying in the first place, say, by pointing to something called the “anterior cingulate cortex” and having other people know what they’re talking about. But over time, better data can refine those maps. So a team of researchers have marshaled a huge amount of brain scan data to create a new, precise brain map, published.</p>
+    {{> molecules-accordion }}
+</section>
+
+<!-- Section with Block Lists -->
+<section>
+
+    <h3>Collaboratively underwhelm impactful paradigms</h3>
+    <p>Efficiently grow cross-platform mindshare after top-line experiences. Monotonectally conceptualize enterprise data before customized quality vectors. Interactively.</p>
+    
+    <div class="row">
+        
+        <div class="col-sm-6">
+            <ul class="block-list">
+                {{# listItems.three }}
+                <li><a href="#">{{ list.short }}</a></li>
+                {{/ listItems.three }}
+            </ul>
+        </div><!-- /column -->
+
+        <div class="col-sm-6">
+            <ul class="block-list">
+                {{# listItems.two }}
+                <li>{{ list.medium }}</li>
+                {{/ listItems.two }}
+                {{# listItems.one }}
+                <li>{{ list.medium }}</li>
+                {{/ listItems.one }}
+            </ul>
+        </div><!-- /column -->
+
+    </div><!-- /.row -->
+
+</section>

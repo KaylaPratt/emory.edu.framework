@@ -1,0 +1,19 @@
+<address itemscope itemtype="http://schema.org/LocalBusiness">
+	<div class="sr-only" itemprop="name">{{ contact.primary.name }}</div>
+	<p translate="no">
+		{{ address.primary.street }}<br />
+		{{ address.primary.zip }}<br />
+		<span itemprop="telephone">
+			<a href="tel:+01-{{ contact.primary.phone }}" title="Click only to dial on your mobile phone.">{{ contact.primary.phone }}</a>
+		</span>
+	</p>
+	{{# map }}
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="embed-responsive embed-responsive-4by3">
+				<iframe src="{{ address.primary.embed }}" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	{{/ map }}
+</address>

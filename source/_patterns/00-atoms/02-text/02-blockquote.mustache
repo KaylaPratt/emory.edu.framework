@@ -1,0 +1,48 @@
+<blockquote class="blockquote {{ styleModifier }}">
+   	<p class="blockquote__quote">{{ message }}</p>
+	{{# share }}
+	<div class="social-media">
+		<a href="{{ socialMedia.twitter.href }}" class="btn btn-sm btn-{{ socialMedia.twitter.class }}" title="Share this quote on {{ socialMedia.twitter.title }}">
+			<span class="sr-only">Share this quote on {{ socialMedia.twitter.title }}</span>
+		</a>
+		<a href="#" class="btn btn-sm btn-share" title="Other sharing options">
+			<span class="sr-only">Other sharing options</span>
+		</a>
+	</div>
+	{{/ share }}
+	{{# citation }}
+	<cite class="blockquote__cite">{{ fullName }}, {{ title }}</cite>
+	{{/ citation }}
+</blockquote>
+
+{{# alignment }}
+
+{{> atoms-paragraph }}
+
+<blockquote class="blockquote pull-right">
+   	<p class="blockquote__quote">Not only do I feel much more confident developing ideas and theories, it's freed my work.</p>
+	<cite class="blockquote__cite">Andrew Wilson, Senior physics and applied math major</cite>
+</blockquote>
+
+{{> atoms-paragraph }}
+{{> atoms-paragraph }}
+{{> atoms-paragraph }}
+
+<blockquote class="blockquote pull-left">
+   	<p class="blockquote__quote">Not only do I feel much more confident developing ideas and theories, it's freed my work.</p>
+	<div class="social-media">
+		<a href="{{ socialMedia.twitter.href }}" class="btn btn-sm btn-{{ socialMedia.twitter.class }}" title="Share this quote on {{ socialMedia.twitter.title }}">
+			<span class="sr-only">Share this quote on {{ socialMedia.twitter.title }}</span>
+		</a>
+		<a href="#" class="btn btn-sm btn-share" title="Other sharing options">
+			<span class="sr-only">Other sharing options</span>
+		</a>
+	</div>
+	<cite class="blockquote__cite">Andrew Wilson, Senior physics and applied math major</cite>
+</blockquote>
+
+{{> atoms-paragraph }}
+{{> atoms-paragraph }}
+{{> atoms-paragraph }}
+
+{{/ alignment }}

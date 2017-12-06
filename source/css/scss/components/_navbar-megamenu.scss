@@ -1,0 +1,119 @@
+//------------------------------------//
+// BOOTSTRAP MEGAMENU                 //
+//------------------------------------//
+// https://bootsnipp.com/snippets/featured/bootstrap-mega-menu
+
+.mega-dropdown-menu {
+  padding: 3rem 2rem!important;
+  width: 100%;
+}
+
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+  padding:.25rem 0;
+}
+
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: $gray-dark;
+  white-space: normal;
+}
+
+.mega-dropdown-menu > li ul > li > a:hover {
+  text-decoration: underline;
+  color: $link-color;
+
+}
+
+// Megamenu headings
+.mega-dropdown-menu .dropdown-header,
+.mega-dropdown-menu .dropdown-header > a {
+  color: $brand-secondary;
+  font-size: 18px;
+  font-weight: bold;
+  padding:.25rem 0;
+  // Prevent BS from making heading use only one line
+  white-space:normal;
+}
+
+// Megamenu heading hover effect
+.mega-dropdown-menu .dropdown-header a:hover {
+  background:transparent;
+  color:lighten($brand-secondary, 15%);
+  text-decoration:none;
+}
+
+// Megamenu heading Link icon
+.mega-dropdown-menu .dropdown-header a:after {
+  font-family:'Fontawesome';
+  content:$fa-var-chevron-right;
+  font-size:1.25rem;
+  font-weight:normal;
+  margin-left:.75rem;
+}
+
+//------------------------------------//
+// CAROUSEL                           //
+//------------------------------------//
+.navbar-megamenu .carousel {background:transparent;}
+
+//------------------------------------//
+// TEXTBOXES                          //
+//------------------------------------//
+.mega-dropdown-menu .textbox {
+  margin-bottom:0;
+  .textbox__textarea {
+    padding: 0;
+    background:transparent;
+    border:0;
+  }
+  .label {
+    letter-spacing:0;
+    background:$pastel;
+    padding:.25rem .5rem;
+  }
+  .label,
+  .textbox__headline,
+  .textbox__footer > p {
+    font-family:$font-family-sans-serif;
+    font-size:1.25rem;
+    line-height:1.5rem;
+    color:initial;
+    }
+    .textbox__header a:hover,
+    .textbox__footer > p > a {color:$link-color;}
+    .textbox__footer {border-color:$pastel;}
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(min-width:$screen-sm-min){
+    .navbar-megamenu {
+        display:flex;
+        width:100%;
+    }
+    .mega-dropdown {
+        position: static !important;
+        text-align:center;
+        width:100%;
+        
+        // Add dividers
+        &:not(:last-of-type) {border-right:1px solid $pastel;}
+        .dropdown-toggle {
+          padding:0;
+          line-height:initial;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+        }
+    }
+}

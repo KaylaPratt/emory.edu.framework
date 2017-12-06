@@ -1,0 +1,53 @@
+//------------------------------------//
+// BREADCRUMBS                        //
+//------------------------------------//
+.breadcrumb {
+    border:0;
+    border-radius:0;
+    font-size:1.25rem;
+    margin:1.5rem 0;
+    padding:0;
+    
+    // Each Nav item
+    li {
+        text-transform:uppercase; 
+        // Add spacing between items for the slash "/"
+        &:not(:last-of-type):after {padding:0 1rem;}
+        &.active {font-weight:bold;}
+        // Make obvious it's a link
+        a {
+            &:hover,
+            &:active {text-decoration:none;}
+        }
+    }
+    
+    // Disabled Nav items
+    li {
+        &.disabled,
+        &.disabled a,
+        &.disabled a:hover,
+        &.disabled a:active,
+        &.disabled a:focus {
+            cursor:not-allowed;
+            text-decoration:none;
+        }
+    }
+}
+
+//------------------------------------//
+// PROGRESSION BREADCRUMBS            //
+//------------------------------------//
+.breadcrumb.breadcrumb-progress {
+    li {
+        text-transform:none;
+        position:relative;
+        
+        // Add the arrows pointing right
+        &:before {content:none;} // Remove Bootstrap '/'
+        &:not(:last-of-type):after {
+            content:$fa-var-chevron-right;
+            font-family:'Fontawesome';
+            color:$pastel;
+        }
+    }
+}

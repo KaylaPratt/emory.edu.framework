@@ -1,0 +1,93 @@
+.infotext {
+    color:#fff;
+    display:flex;
+    flex-flow:column nowrap;
+    overflow:hidden;
+    .infotext-item {
+        display:flex;
+        justify-content:center;align-items:center;
+        position:relative;
+        width:100%;
+        min-height:275px;
+        transition:all .5s ease;
+        border:none;
+        padding:30px;
+        &:nth-of-type(3n+1) {background-color:$cerulian}
+        &:nth-of-type(3n+2) {background-color:$teal}
+        &:nth-of-type(3n+3) {background-color:$royal}
+        &:nth-of-type(3n+4) {background-color:$evergreen}
+        &:hover,
+        &:active,
+        &:focus {cursor:default}
+
+    }
+    .infotext__initial,
+    .infotext__reveal {text-align:left}
+    .infotext__initial {
+        text-align:center;
+        .btn {display:none;margin-top:15px}
+    }
+    
+    .infotext__list {margin:0 auto;padding-top:15px;line-height:1.5rem}
+    .infotext__list li {margin-bottom:15px}
+
+    .infotext__title,
+    .infotext__subtitle {margin:0 auto .5rem auto}
+    .infotext__title {color:#fff;text-transform:uppercase}
+    .infotext__subtitle {font-family:$subheading}
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    .infotext {
+        .infotext-item {flex-flow:column nowrap}
+        .infotext__list {padding-left:15px}
+    }
+}
+@media(min-width:$screen-sm-min){
+    .infotext {
+        .infotext-item {
+            
+        }
+        .infotext__initial {
+           
+        }
+        .infotext__reveal {
+           
+        }
+    }
+}
+@media(min-width:$screen-md-min){
+
+}
+@media(min-width:$screen-lg-min){
+    .infotext {
+        flex-flow:row nowrap;
+        .infotext-item {
+            padding:0;
+            width:33.33%;
+            &:hover,
+            &:active,
+            &:focus {
+                width:100%;
+                min-height:275px;
+                cursor:pointer;
+                .infotext__initial {display:none}
+                .infotext__reveal {opacity:1}
+            }
+        }
+        .infotext__initial,
+        .infotext__reveal {padding:15px}
+        .infotext__initial {
+            .btn {display:inline-block}
+        }
+        .infotext__reveal {
+            position:absolute;
+            width:100%;
+            opacity:0;
+            transition:all .3s ease-in;
+        }
+    }
+}

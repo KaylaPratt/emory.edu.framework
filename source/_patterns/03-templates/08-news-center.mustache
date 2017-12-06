@@ -1,0 +1,19 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Emory News Center") }}
+
+<!-- Header -->
+{{> organisms-header-news-center:navbar-fixed-top }}
+
+<!-- Page Title -->
+<h1 class="sr-only">Emory News Center</h1>
+
+<!-- Page content -->
+<div class="page news-center-page" id="page">
+	{{> atoms-background-cover-image }}
+	<main role="main">
+		{{> organisms-news-center-body }}
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer-news-center }}

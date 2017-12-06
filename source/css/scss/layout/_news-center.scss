@@ -1,0 +1,118 @@
+.news-center-page {
+    
+    .background-cover {@include background-cover('https://unsplash.it/1900/700?image=957','60vh', 'fixed');}
+    
+    // overlaps
+    .overlap {@include overlap(200px);}
+    &.news-center-article-page,
+    &.news-center-topic-page {
+        .overlap {@include overlap(125px);}
+    }
+
+    // -- News Center Article page -- //
+    &.news-center-article-page .news-center-article {
+        
+        // Create readbility
+        > p {
+            text-align:justify;
+            line-height:3rem;
+            margin-bottom:2.5rem;
+            color:$gray;
+            font-size:1.75rem;
+        }
+
+        // Make obvious links
+        > p > a {
+            text-decoration:underline;
+            &:hover {
+                background:$brand-secondary;
+                color:#fff;
+                text-decoration:none;
+            }
+        }
+        
+        // Social Media share toolbar
+        .btn-toolbar {margin:1rem 0;}
+        
+        // Make headings easy to distinguish
+        > h4,
+        > h5 {text-transform:uppercase}
+        > h4,
+        > h5,
+        > h6 {
+            font-family:$font-family-sans-serif;
+            font-weight:bold;
+        }
+        > h3 {
+            border-bottom:2px solid $timberwolf;
+            padding-bottom:1.75rem;
+        }
+        > h4 {font-size:2rem;}
+        > h5,
+        > h6 {
+            font-size:1.75rem;
+            color:$brand-secondary;
+        }
+        
+        // Meta info, author, contributor
+        .byline {
+            display:inline-block;
+            font-style:italic;
+            border-bottom:2px solid $brand-secondary;
+            padding-bottom:.5rem;
+            margin-bottom:1rem;
+        }
+
+        // Comments
+        .comment__list {margin-top:2rem;}
+    }
+}
+
+.news-center-title {
+    font-size:3rem;
+    text-transform:uppercase;
+    color:$brand-secondary;
+    line-height:$navbar-height;
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-sm-max){
+    // -- News Center Article page -- //
+    &.news-center-article-page .news-center-article {
+        p.lead {font-size:2rem;} // Lead text larger on small viewports
+    }
+}
+@media(min-width:$screen-sm-min){
+    // Article
+    .news-center-article {
+
+        // Blockquote
+        blockquote,.blockquote {
+            padding:calc(#{$grid-gutter-width} / 2) 0;
+            p,.blockquote__quote {
+                font-size:4rem;
+                line-height:4.75rem;
+            }
+            cite,.blockquote__cite {font-size:1.25rem;}
+
+        }
+
+        // Audio, Video, Blockquote positioning
+        audio,video,figure,.media,blockquote,.blockquote {
+            // Float right
+            &.pull-right {
+                padding-left:calc(#{$grid-gutter-width} / 2);
+                margin-right:calc(-#{$grid-gutter-width} / 2);
+            }
+            // Float left
+            &.pull-left {
+                padding-right:calc(#{$grid-gutter-width} / 2);
+                margin-left:calc(-#{$grid-gutter-width} / 2);
+            }
+        }
+    }
+}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){}

@@ -1,0 +1,45 @@
+<header role="banner" class="header headroom" >
+    <!-- Primary navigation -->
+    <nav role="navigation" aria-label="Main Navigation" class="navbar navbar-stacked navbar-primary">
+        <div class="container-fluid">
+            <div class="row row-eq-height">
+                
+                <!-- Skip Navigation for screen readers -->
+                <a href="#mainContent" class="sr-only">Skip to main content</a>
+
+                <!-- Screen Reader anchor to main navigation -->
+                <a name="mainNav" class="sr-only"></a>
+                
+                <!-- Branding -->
+                <div class="nav-branding col-sm-3 col-md-2">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    {{> molecules-brand-toggle(switch: true, logoVisibility: "visible-xs-block hidden-md visible-lg-block") }}
+                </div><!-- column -->
+                
+                <!-- Collapse these menus on mobile -->
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <div class="col-sm-9 col-md-10">
+                        <div class="row navbar-primary-mobile">
+                            
+                            <!-- Secondary Nav -->
+                            <div class="navbar-row-{{ navbarRowTop }}">
+                                {{> molecules-edu-row-secondary }}
+                            </div><!-- /.navbar-row-secondary -->
+
+                            <!-- Primary Nav -->
+                            <div class="navbar-row-{{ navbarRowBottom }}">
+                                {{> molecules-edu-row-primary }}
+                            </div><!-- /.navbar-row-primary -->
+
+                        </div><!-- /.row -->
+                    </div><!-- column -->
+
+                </div><!-- /.collapse -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </nav><!-- /.navbar -->
+</header>
+
+<!-- Screen Reader anchor to main content -->
+<a name="mainContent"></a>

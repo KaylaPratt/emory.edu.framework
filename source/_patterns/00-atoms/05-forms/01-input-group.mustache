@@ -1,0 +1,12 @@
+<div class="input-group input-group-{{ styleModifier }}">
+  <label for="example-input-group" class="sr-only">Input Group Name</label>
+  <input id="example-input-group" type="text" class="form-control" placeholder="{{ placeholder }}" aria-label="Text input">
+  <span class="input-group-btn">
+    <button role="submit" class="btn btn-solid {{ btnStyle }}" title="Submit" aria-label="Submit">
+        {{# btnIcon }}
+        <span class="fa {{ icon }}" aria-hidden="true"></span>
+        {{/ btnIcon }}
+        {{ button }}
+    </button>
+  </span>
+</div>

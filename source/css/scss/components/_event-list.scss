@@ -1,0 +1,78 @@
+.event-list {
+    ul,ol {
+        list-style:none;
+        margin:0;
+        padding:0;
+        > li {
+            display:flex;
+            flex-flow:row nowrap;
+            padding:calc(#{$grid-gutter-width} / 2) 0;
+            
+        }
+
+        > li:not(:last-child) {border-bottom:1px solid $platinum;}
+
+        // Alertnating background color
+        > li:nth-of-type(odd) {background-color:$snow;}
+    }
+
+    // Date and month
+    .event-list__date {
+        > div {
+            width:50px;
+            height:50px;
+            text-align:center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            color:#fff;
+            background-color:$brand-secondary;
+            span {
+                line-height:1.85rem;
+                &:first-child {font-size:2rem;}
+                &:last-child {
+                    letter-spacing:.15rem;
+                    text-transform:uppercase;
+                }
+            }
+        }
+        
+    }
+
+    // Event description area
+    .event-list__textarea {
+        padding-left:calc(#{$grid-gutter-width} / 2);
+    }
+    .event-list__headline {
+        margin:0 0 .45rem 0;
+        font-size:2rem;
+        a {
+            text-decoration:none;
+            color:$raisin;
+            // Make obvious it's a link
+            &:hover {text-decoration:underline;}
+        }
+    }
+
+    // Event specific details
+    .event-list__info {
+        > span {margin-right:.5rem;}
+        > span a {display:inline-block;}
+    }
+    .event-list__time,
+    .event-list__location {
+        font-size:1.15rem;
+        padding:.15rem .5rem;
+        background-color:$platinum;
+        display:inline-block;
+        line-height:1.5rem;
+        &:before {
+            font-family:'Fontawesome';
+            margin-right:.45rem;
+        }
+    }
+    .event-list__time {text-transform:uppercase;}
+    .event-list__time:before {content:$fa-var-clock-o;}
+    .event-list__location:before {content:$fa-var-map-marker;}
+}

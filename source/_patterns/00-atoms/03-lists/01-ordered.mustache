@@ -1,0 +1,16 @@
+<ol class="list-group">
+	{{# listItems.one }}
+	<li>{{ list.medium }}</li>
+	{{/ listItems.one }}
+	<li>
+		Lists can be nested inside of each other
+		<ol>
+			{{# listItems.two }}
+			<li>{{ list.medium }}</li>
+			{{/ listItems.two }}
+		</ol>
+	</li>
+	{{# listItems.three }}
+	<li>{{ list.medium }}</li>
+	{{/ listItems.three }}
+</ol>

@@ -1,0 +1,14 @@
+<div class="marketing-feature marketing-feature-{{ styleModifier }}">
+    <div class="marketing-feature__img-wrap {{ pullRight }}">
+        <img class="img-responsive" src="https://unsplash.it/640/360" alt="Alt Text" />
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-lg-5 {{ leftCol }}">
+            {{> atoms-blockquote(citation: true, fullName: "Andrew Wilson", title: "Senior physics and applied math major", message: "Not only do I feel much more confident developing ideas and theories, it's freed my work.") }}
+        </div>
+        <div class="overlap col-sm-7 col-lg-5 col-lg-offset-1 {{ rightCol }}">
+            {{> molecules-textbox:cta(textboxLabel: true, textboxExcerpt: true, blockList: true, label: "Undergraduate", headline: "Welcome to the Epicenter of Opportunity.", excerpt: "You have more than 70 majors and 50 minors available to you across four schools and colleges—and infinite ways to create yourself. Feel pretty empowering, right?") }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+.person {
+    padding:$grid-gutter-width 0;
+    
+    .person__wrap {
+        // Make the image and text stack
+        display:flex;
+        flex-flow:column nowrap;
+    }
+    
+    // Photo of the person
+    .person__img img {border-radius:50%;} // Use a square image 100x100
+    
+    // Info about the person
+    .person__info {
+        margin:2rem 0 0 0;
+        width:100%;
+        h1,h2,h3,h4,h5,h6 {margin:0; padding:0;}
+        .heading-group {margin-bottom:.5rem; padding-bottom:.5rem;}
+    }
+    
+    // Specific details about the person
+    .person__name,
+    .person__title {display:block;margin:0;}
+    .person__name {
+        font-size:3rem;
+        font-family:$font-family-serif;
+    }
+    .person__title {
+        font-size:1.5rem;
+        letter-spacing:.15rem;
+        text-transform:uppercase;
+    }
+    .person__bio {margin-top:3rem;}
+    
+    // For use when displaying an entire biography via .person__bio
+    &.person-bio {
+        .person__contact {
+            // Add a border to divide the name/title and contact info
+            border-top:1px solid $timberwolf;
+            padding-top:1rem;
+            display:flex;
+            flex-flow:wrap;
+            justify-content:space-between;
+        }
+    }
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){}
+@media(min-width:$screen-sm-min){
+    .person {
+        
+        // Make the image and text in a row for larger viewports
+        .person__wrap {
+            flex-flow:row nowrap;
+            align-items:flex-start;
+        }
+        
+        // Switch around the margin for larger viewports
+        .person__info {margin:0 0 0 2rem;}
+        
+        // For use when displaying an entire biography via .person__bio
+        &.person-bio .person__contact {flex-wrap:nowrap;}
+    }
+}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){}

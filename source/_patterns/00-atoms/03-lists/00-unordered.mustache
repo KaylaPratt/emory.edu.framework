@@ -1,0 +1,16 @@
+<ul class="list-group">
+	{{# listItems.three }}
+	<li>{{ list.medium }}</li>
+	{{/ listItems.three }}
+	<li>
+		Lists can be nested inside of each other
+		<ul>
+			{{# listItems.two }}
+			<li>{{ list.medium }}</li>
+			{{/ listItems.two }}
+		</ul>
+	</li>
+	{{# listItems.one }}
+	<li>{{ list.medium }}</li>
+	{{/ listItems.one }}
+</ul>

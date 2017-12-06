@@ -1,0 +1,35 @@
+.tag-cloud {
+    border:2px solid $platinum;
+    margin:0;
+    padding:0;
+    h1,h2,h3,h4,h5,h6,.heading-bg,.underline {margin:0;}
+    .tag-cloud__tags {
+        padding:$grid-gutter-width;
+        margin:0px 0px 10px;
+    }
+    
+    // Individual tags
+    li {
+        padding:0;
+        font-size:1.5rem;
+        font-style:italic;
+        display:inline-block;
+        
+        // Add commas between tags *except* the last tag
+        &:not(:last-of-type):after {content:',' ' ';}
+        
+        // Link colors and effects
+        a {
+            color:$link-color;
+            text-decoration:underline;
+            padding:0 .25rem;
+            
+            // Make obvious it's a link
+            &:hover {
+                text-decoration:none;
+                background:$brand-secondary;
+                color:#fff;
+            }
+        }
+    }
+}

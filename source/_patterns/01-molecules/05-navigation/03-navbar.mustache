@@ -1,0 +1,79 @@
+<nav role="navigation" aria-label="Main Navigation" class="navbar navbar-{{ navbarStyle }} navbar-{{ styleModifier }}">
+    <div class="container-fluid">
+        <div class="row row-eq-height">
+            
+            <!-- Branding -->
+            <div class="nav-branding col-sm-3 col-md-2">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                {{> molecules-brand-toggle }}
+            </div><!-- /column -->
+
+            <!-- Collapse this menu on mobile -->
+            <div class="row collapse navbar-collapse js-navbar-collapse">
+            
+                <!-- Primary row of menu items -->
+                <div class="navbar-row-primary">
+                    <div class="col-sm-9 col-md-10">
+                        
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            {{# listItems.two }}
+                            <li role="presentation"><a href="#">{{ list.short }}</a></li>
+                            {{/ listItems.two }}
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {{# listItems.three }}
+                                <li role="presentation"><a href="#">{{ list.short }}</a></li>
+                                {{/ listItems.three }}
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                            </li>
+                        </ul><!-- /.nav -->
+                        
+                        <!-- Search form -->
+                        <ul class="nav nav-{{ navbarStyle }} navbar-nav navbar-right navbar-search">
+                            <form class="navbar-form hidden-xs">
+                                <!-- Search Button and Input toggle -->
+                                <div class="input-group">
+                                    <input type="text" class="form-control nav-search toggle-reveal__horizontal" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <a href="#" title="Search" class="btn btn-{{ navbarStyle }} toggle-button"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                    </span>
+                                </div>
+                            </form>
+                            <form class="visible-xs-block hidden-sm">
+                                <!-- mobile search input -->
+                                <div class="input-group">
+                                    <input type="text" class="form-control nav-search" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <a href="#" title="Search" class="btn btn-{{ navbarStyle }}"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                    </span>
+                                </div>
+                            </form>
+                        </ul><!-- /.nav -->
+                        
+                        <!-- Dropdown menu -->
+                        <ul class="nav nav-{{ navbarStyle }} navbar-nav navbar-right nav-">
+                            <!-- Dropdown Item -->
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Dropdown <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    {{# listItems.five }}
+                                    <li role="presentation"><a href="#">{{ list.short }}</a></li>
+                                    {{/ listItems.five }}
+                                </ul>
+                            </li>
+                        </ul><!-- /.nav -->
+
+                    </div><!-- /column -->
+                </div><!-- /.navbar-row-primary -->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</nav><!-- /.navbar -->

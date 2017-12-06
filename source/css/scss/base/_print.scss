@@ -1,0 +1,275 @@
+// Attach to divs for elements only intended for print, such as cover pages and static images (not GIFs)
+.print-only {display:none!important;visibility:hidden !important;}
+
+@media print {
+  
+    // Show the things
+    .print-only {display: block !important;visibility:visible !important;}
+
+    // Attach to divs that should not appear in print
+    .screen-only {display: none !important;}
+  
+    // Reset it all
+    *,
+    *:before,
+    *::before,
+    *:after,
+    *::after,
+    *:first-letter,
+    p:first-line,
+    div:first-line,
+    blockquote:first-line,
+    li:first-line {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border: none !important;
+        text-align: left !important;
+
+    }
+
+    // hide it all
+    .header,
+    .footer,
+    .breadcrumb,
+    .background,
+    .background-cover,
+    .hero-image-overlap__bg,
+    .social-media,
+    .btn-toolbar,
+    .btn-group,
+    .btn,
+    .oc-export-btn,
+    .pagination,
+    .comment,
+    .carousel-indicator,
+    .carousel-control,
+    .owl-nav,
+    .owl-dots,
+    [data-toggle="popover"],
+    [data-toggle="tooltip"],
+    .heading-bg a.pull-right {display: none !important;}
+
+    // Set margin for each page
+    @page {margin: 0 !important;}
+
+    // Add to a section to force a breakpoint
+    .page-break {
+        display: block !important;
+        position: relative !important;
+        page-break-after: always !important;
+    }
+
+    // Typography
+    h1 {font-size:24pt !important;}
+    h2 {font-size:20pt !important;}
+    h3 {font-size:18pt !important;}
+    h4 {font-size:16pt !important;}
+    h5 {font-size:14pt !important;}
+    h6 {font-size:12pt !important;}
+    .underline {
+        border-bottom:3px solid #999 !important;
+        padding-bottom:.05in !important;
+    }
+    .heading-bg {margin-bottom:.25in !important;}
+    .panel-title {margin-bottom:.05in !important;}
+    .marketing__message {line-height: initial !important;}
+    .news-center-article {
+        h1,h2,h3,h4,h5,h6 {text-transform:none !important;}
+    }
+    
+    // Make lists great again
+    ul,ol {
+        margin: 0 0 0 .15in !important;
+        li,
+        li a {padding: 0 !important;}
+    }
+    ul li {list-style-type: disc !important;}
+    ol li {list-style-type: decimal !important;}
+    .list-group li::before {content: none !important;}
+
+    // Hide links from displaying the full URL (not recommended)
+    a[href]:after {content: none !important;}
+
+    // Make all content and columns full-width
+    [class^="col-"],[class*=" col-"],
+    main,
+    .container {
+        width: 100% !important;
+        position: relative !important;
+        img,
+        .marketing-feature__img-wrap {
+            max-width: 100% !important;
+            width: auto !important;
+        }
+    }
+
+    // No more column push/pull
+    [class^="col-"],[class*=" col-"] {
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin: 0 auto !important;
+    }
+
+    // No more floating
+    [class^="pull-"],[class*=" pull-"] {float: initial !important;}
+
+    // Less padding
+    .sidebar,
+    .person,
+    .alert,
+    blockquote, .blockquote {padding: .15in 0 !important;}
+
+    // No more padding
+    main,
+    [class^="col-"],[class*=" col-"],
+    [class^="textbox__"],[class*=" textbox__"],
+    [class^="hero-image-overlap__"],[class*=" hero-image-overlap__"],
+    [class^="icon-grid__"],[class*=" icon-grid__"],
+    .container,
+    .container-fluid,
+    .page,
+    .heading-bg,
+    .label,
+    .tag-cloud__tags,
+    .blockquote__cite,
+    .marketing,
+    .owl-carousel__textarea,
+    .owl-carousel__title,
+    .form-control,
+    .orgchart,
+    .orgchart .node,
+    .panel-group button,
+    .panel-body {padding: 0 !important;}
+
+    // No more margin
+    [class^="icon-grid__"],[class*=" icon-grid__"],
+    .overlap,
+    .alert,
+    .tag-cloud,
+    .carousel-thumbs,
+    .hero-image-overlap,
+    .row {margin: 0 !important;}
+
+    // Textboxes
+    .textbox {
+        margin-bottom:.15in !important;
+        padding-bottom:.15in !important;
+        border-bottom: 1px solid #999 !important;
+        .label {font-size:11pt !important;}
+    }
+    .textbox__img-wrap {margin-bottom: .15in !important;}
+
+    // Carousels
+    .carousel-caption,
+    .carousel-caption.carousel-caption-mini {
+        display:block !important;
+        position: relative !important;
+        padding:.15in 0 !important;
+    }
+    .owl-carousel .owl-stage {
+        width:8in !important;
+        // Disabled transitions
+        transform:none !important;
+        transition:none !important;
+        // Only show first slide
+        .owl-item:not(:first-of-type) {display: none !important;}
+    }
+
+    // Forms
+    .form-control {height:auto !important;}
+    input[type="radio"] {
+        &:checked + label::after,
+        + label::after {background-color: #000 !important}
+        &:checked + label::before {border-color: #000 !important;}
+    }
+
+    // Blockquotes
+    blockquote,
+    .blockquote {
+        &.pull-right {padding-left:.15in !important;}
+        &.pull-left {padding-right:.15in !important;}
+        .blockquote__quote {
+            &:before,&:after {
+                content: "\22"; // Replace Fontawesome icon with browser "quote"
+                font-family:initial !important;
+                top: auto !important;
+                font-size: inherit!important;
+            }
+        }
+    }
+
+    // JS Orgchart
+    .orgchart {
+        .node {
+            border:3px solid #999 !important;
+            margin:3px !important;
+        }
+        .fa {display:none !important;}
+        .verticalNodes ul li {list-style-type: none!important;}
+        tr.lines td.rightLine {border-right:1px solid #999 !important;}
+        tr.lines td.leftLine {border-left:1px solid #999 !important;}
+        tr.lines .downLine {background-color:#999 !important;}
+    }
+
+    // Accordion / Panel
+    .panel {
+        // Hide toggle button
+        .panel-title::after {content:none !important;}
+        .panel-heading {
+            margin:.25in 0 .15in 0 !important;
+            border-bottom:1px solid #999 !important;
+        }
+        // Expand contents
+        .collapse {
+            display: block !important;
+            height: auto !important;
+        }
+    }
+    
+
+    // Icon Grid
+    .icon-grid {
+        .icon-grid__item > div {
+            float:left !important;
+            line-height:1in !important;
+            margin:0 .15in !important;
+        }
+        .icon-grid__icon {width:1in !important;}
+        .icon-grid__info {max-width:8in !important;}
+    }
+
+    // Cover Page
+    .cover-page {
+        width:8.5in !important;
+        height:11in !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:center !important;
+        align-items:center !important;
+        text-align:center !important;
+        border:3px solid #999 !important;
+        .logo {width:2in !important;}
+        h1,h2,h3,h4,h5,h6 {
+            font-size:24pt !important;
+            margin:0 auto !important;
+            padding:0 !important;
+            width:5in !important;
+            text-align:center !important;
+        }
+        .cover-page__title {
+            font-size:26pt;
+            font-family:$font-family-serif;
+        }
+    }
+
+    section {
+        padding:.25in 0 !important;
+        margin:0 auto !important;
+        overflow: hidden !important;
+    }
+
+}

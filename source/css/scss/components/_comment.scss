@@ -1,0 +1,19 @@
+.comment {
+    .comment__form {margin-bottom:2rem;}
+    .comment__list {
+        list-style:none;
+        padding:0;
+        margin-left:auto;
+        .comment__item {
+            list-style-type:none;
+            margin-bottom:2rem;
+            &:not(:last-of-type) .comment__textarea {
+                border-bottom:2px dotted $timberwolf;
+                padding-bottom:.5rem;
+            }
+            
+        }
+    }
+    .comment__name {text-align:center;}
+}
+

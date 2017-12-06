@@ -1,0 +1,17 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Title of Article") }}
+
+<!-- Header -->
+{{> organisms-header-news-center:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page news-center-page news-center-article-page" id="page">
+	{{> atoms-background:desaturate }}
+	<main role="main">
+		{{> organisms-news-center-article-body }}
+		{{> molecules-navbar-share:navbar-fixed-bottom }}
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer-news-center }}

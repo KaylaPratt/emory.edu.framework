@@ -1,0 +1,22 @@
+<!-- Introduction -->
+<section>{{> molecules-block-intro }}</section>
+
+<!-- Filtered options output -->
+<section>
+    <div class="row">
+        <div class="col-md-6">
+            {{> molecules-textbox:border(textboxLabel: true, textboxMeta: true, label: "Academics") }}
+        </div><!-- /column -->
+        <div class="col-md-6">
+            {{> molecules-textbox:border(textboxLabel: true, textboxMeta: true, label: "Maths") }}
+        </div><!-- /column -->
+        <div class="clearfix visible-md-block hidden-lg"></div>
+        <div class="col-md-6">
+            {{> molecules-textbox:border(textboxLabel: true, textboxMeta: true, label: "Political Science") }}
+        </div><!-- /column -->
+        <div class="col-md-6">
+            {{> molecules-textbox:border(textboxLabel: true, textboxMeta: true, label: "Visual Arts") }}
+        </div><!-- /column -->
+    </div><!-- /.row -->
+    {{> molecules-pagination }}
+</section>

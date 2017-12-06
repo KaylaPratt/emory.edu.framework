@@ -1,0 +1,26 @@
+// -- Adding icons to contact links -- //
+
+a[href^="tel:"]:before,
+a[href^="mailto:"]:before {font-family:'Fontawesome';}
+
+// -- Telephone links -- //
+a[href^="tel:"]:before {content: $fa-var-phone ' ';} 
+
+// -- Email links -- //
+a[href^="mailto:"]:before {content: $fa-var-envelope ' ';}
+
+// Media Queries
+@media(min-width:$screen-sm-min){
+    
+    /* 
+    * Remove telephone link appearance
+    * on larger viewports to discourage
+    * readers from clicking
+    * unless on a mobile device
+    */
+    a[href^="tel:"] {
+        color:$text-color;
+        text-decoration:none;
+        cursor:text;
+    }
+}

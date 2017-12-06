@@ -1,0 +1,43 @@
+.navbar-share {
+    // Only show on mobile
+    display:none;
+    background:$platinum;
+    border-top:1px solid $pastel;
+    min-height:calc(#{$navbar-height} / 2);
+
+    // Make container full width
+    > div {width:100%;}
+    
+    .btn-toolbar,
+    .social-media {
+        display:flex;
+        align-items:center;
+        margin:0 auto;
+        position:relative;
+    }
+
+    .btn-toolbar {justify-content:space-around;}
+    .social-media {justify-content:center;}
+
+    .social-media .btn {
+        background:none;
+        color:$gray-light;
+        margin:0 auto;
+       
+        // Icon size
+        &:before {font-size:16px;}
+    }
+
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    // Only show on mobile
+    .navbar-share {
+        display:flex;
+        align-items:center;
+    }
+}
+

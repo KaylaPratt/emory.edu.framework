@@ -1,0 +1,86 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Filter Data Page") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page filter-data-page" id="page">
+    {{> atoms-background }}
+	<main role="main">
+        <div class="container">
+            <div class="row">
+                <!--
+                * Reverse the columns (push/pull) so that in mobile
+                * view the sidebar with the filter options will be at
+                * the top for easier access
+                -->
+                <!-- Sidebar -->
+                <div class="col-sm-4 col-sm-push-8 col-lg-3 col-lg-offset-1">
+                    <section class="sidebar">
+                        <!-- Filter form -->
+                        <form>
+                            <fieldset>
+                                <legend class="heading-bg heading-bg-brand">Browse by:</legend>
+                                <div class="form-group form-group-lg">
+                                    {{> atoms-input-group:lg(btnIcon: true, icon: "fa-search", button: "", placeholder: "Search...")}}
+                                </div>
+                                <div class="form-group form-group-lg">
+                                    {{> atoms-select-menu }}
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend class="heading-bg">Program level: <span class="pull-right">{{> molecules-popover(title: "About Program Levels", message: "Explain what the reader needs to know about this.") }}</span></legend>
+                                <div class="form-group">
+                                    {{> atoms-radio }}
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend class="heading-bg">Frequency:</legend>
+                                <div class="form-group">
+                                    {{> atoms-checkbox }}
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!-- /Filter form -->
+                    </section>
+                </div>
+                
+                <!-- Body content -->
+                <div class="col-sm-8 col-sm-pull-4">
+                    {{> organisms-filter-data-body }}
+                </div>  
+            </div><!-- /.row -->
+            
+            <!-- chartist.js -->
+            <h2>Wow look at this chart guise</h2>
+            <div class="row">
+                <div class="col-md-6">
+                     {{> organisms-chartist }}
+                </div>
+                <div class="col-md-6">
+                    {{> molecules-textbox:cta(textboxLabel: true, label: "Chartist.js", headline: "Just a Call to Action, why not?", textboxExcerpt: true, excerpt: "Efficiently syndicate customer directed materials after business experiences. Globally scale robust niche markets through front-end benefits. Seamlessly parallel task granular metrics without user friendly manufactured products. Quickly reconceptualize user.", moreBtn: true)}}
+                </div>
+            </div><!-- /.row -->
+            
+            <!-- Textboxes -->
+            <h2>Or just look at these boring textboxes instead</h2>
+            <div class="row equal-height">
+                <div class="col-sm-4">
+                    {{> molecules-textbox(moreBtn: true, headline: "Plain ol' Textbox", textboxExcerpt: true, excerpt: "Continually deploy premier relationships via viral networks. Distinctively network excellent e-tailers whereas viral catalysts for change. Interactively fashion fully tested manufactured products via.") }}
+                </div>
+                <div class="col-sm-4">
+                    {{> molecules-textbox(moreBtn: true, headline: "Another textbox", textboxExcerpt: true, excerpt: "Monotonectally supply collaborative partnerships and future-proof human capital. Competently drive distributed initiatives via client-centric.") }}
+                </div>
+                <div class="col-sm-4">
+                    {{> molecules-textbox(moreBtn: true, headline: "The last textbox", textboxExcerpt: true, excerpt: "Assertively underwhelm next-generation action items before viral infrastructures. Efficiently evisculate 2.0 niche markets rather than resource-leveling benefits. Seamlessly reconceptualize top-line functionalities and resource.") }}
+                </div>
+            </div>
+        </div>
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

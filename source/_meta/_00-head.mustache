@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="{{ htmlClass }}" lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#004b97">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#004b97">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#004b97">
+    <!-- iPhone bookmark icon -->
+    <link rel="apple-touch-icon" href="{{ includesPath }}images/iphone-bookmark.png"/>
+		<!-- Favicon Chrome -->
+		<link rel="icon" sizes="192x192" href="{{ includesPath }}images/favicon.png">
+      
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ includesPath }}css/bootstrap.scss.css?{{ cacheBuster }}" media="all" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ includesPath }}css/font-awesome.scss.css?{{ cacheBuster }}" media="all" /> 
+    <link rel="stylesheet" href="{{ includesPath }}css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+    
+    <!-- Base styles -->
+    <link rel="stylesheet" href="{{ includesPath }}css/style.scss.css?{{ cacheBuster }}" media="all" />
+    
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {{{ patternLabHead }}}
+    <!-- End Pattern Lab -->
+  
+  </head>
+  <body class="{{ bodyClass }}">

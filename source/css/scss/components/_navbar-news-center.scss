@@ -1,0 +1,151 @@
+// DEPENDENCY: _navbar.scss
+
+.navbar.navbar-news-center {
+
+    border-bottom:1px solid $pastel;
+    
+    // Typography stuff
+    .navbar-row-secondary {text-transform:uppercase;}
+    .news-center-title h1 {text-transform:uppercase;font-family:$font-family-sans-serif;}
+    .navbar-row-primary .dropdown-toggle {letter-spacing:.25rem;font-size:1.75rem;font-family:$font-family-serif;}
+    
+    //------------------------------------//
+    // DROPDOWN MENU                      //
+    //------------------------------------//
+    .dropdown {
+        // Add icon to dropdown toggle
+        .dropdown-toggle:before {
+            content:$fa-var-bars ' ';
+            font-family:'Fontawesome';
+        }
+
+        // Change icon to X when dropdown toggle is OPEN
+        &.open .dropdown-toggle:before {content:$fa-var-times ' ';}
+
+    }
+
+    // Make dropdown menu as wide as toggle
+    .dropdown-menu {width:100%;}
+    
+    //------------------------------------//
+    // SEARCH INPUT GROUP                 //
+    //------------------------------------//
+    .navbar-search {
+        margin:0;
+        .input-group-btn {vertical-align:initial;} // centers button
+        
+        // Input group
+        .input-group {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            
+            // Search input color
+            .form-control {background:$pastel;}
+            
+        }
+        
+        // Search input width
+        .nav-search {width:250px;}
+    }
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max) {
+    .navbar.navbar-news-center .navbar-search .input-group {
+        margin:0;
+        width:100%;
+        .form-control {width:calc(100% - 35px);}
+        input {border:none;background-color:$snow;}
+    }
+}
+@media(min-width:$screen-sm-min){
+    .navbar.navbar-news-center {
+        
+        // Logo size
+        .nav-branding {
+            width:200px;
+            height:100%;
+            margin-left:15px;
+            padding-right:15px;
+        }
+
+        // Make row items evenly spaced apart
+        [class^="navbar-row-"],
+        [class^="navbar-row-"] .navbar-nav {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content:space-between;
+        }
+
+        .navbar-row-secondary .navbar-nav {
+            width:100%;
+
+            // Make menu fit into smaller space
+            > li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                > a {
+                    padding:0;
+                    line-height:1.25rem;
+                }
+            }
+        }
+
+        // Make row items all same height
+        .navbar-row-primary {
+            &.row-eq-height {height:$navbar-height;}
+
+            .navbar-nav {
+                border-left:1px solid $pastel; // Add border between items
+                height:$navbar-height;
+            }
+        }
+
+        // Open and focused inputs, dropdown colors
+        &.navbar-default .navbar-nav > .open > a,
+        &.navbar-default .navbar-nav > .open > a:hover,
+        .dropdown-menu,
+        .dropdown-menu > li > a {
+            border-color:darken($brand-secondary,6.5%);
+            background-color:$brand-secondary;
+            color:#fff;
+        }
+        
+        .dropdown-menu > li > a:hover {color:$gold;}
+
+        //------------------------------------//
+        // DROPDOWN MENU                      //
+        //------------------------------------//
+        .dropdown {
+            .dropdown-toggle {
+                padding-top:0;
+                padding-bottom:0;
+                line-height:$navbar-height;
+            }
+        }
+
+        //------------------------------------//
+        // SEARCH INPUT GROUP                 //
+        //------------------------------------//
+        .navbar-search {
+            height:$navbar-height;
+            padding:0;
+            .input-group {
+                // Make toggle button and input full height of navbar
+                .nav-search,
+                .input-group-btn,
+                .input-group-btn .btn {height:$navbar-height;}
+                
+                .input-group-btn .btn {
+                    font-size:2.25rem;
+                    line-height:60px;
+                    width:$navbar-height;
+                }
+            }
+        }
+    }
+}

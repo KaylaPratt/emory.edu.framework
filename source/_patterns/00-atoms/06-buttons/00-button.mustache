@@ -1,0 +1,18 @@
+<a href="#" class="btn {{ btnStyle }} {{ styleModifier }}" title="{{ button }}" aria-label="{{ button }}">
+    {{# btnIcon }}
+    <span class="fa {{ icon }}" aria-hidden="true"></span>
+    {{/ btnIcon }}
+    {{ button }}
+</a>
+
+{{# variations }}
+
+<a href="#" class="btn btn-default {{ styleModifier }}" title="Default">Default</a>
+<a href="#" class="btn btn-success {{ styleModifier }}" title="Success">Success</a>
+<a href="#" class="btn btn-info {{ styleModifier }}" title="Info">Info</a>
+<a href="#" class="btn btn-warning {{ styleModifier }}" title="Warning">Warning</a>
+<a href="#" class="btn btn-danger {{ styleModifier }}" title="Danger">Danger</a>
+<a href="#" class="btn btn-link {{ styleModifier }}" title="Link">Link</a>
+<a href="#" class="btn btn-default {{ styleModifier }}" title="Disabled" disabled="disabled">Disabled</a>
+
+{{/ variations }}

@@ -1,0 +1,37 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Page Not Found. Why are you even printing this?") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page interior-page" id="page">
+	{{> atoms-background }}
+	<main>
+		<div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-push-1 col-md-8 col-md-push-2">
+
+                    <h1>404: Page not Found</h1>
+                    {{> molecules-alert:alert-danger(message: "This page might have moved or is no longer available.")}}
+                    
+                    <p>There are a few things you can try to find the page you seek:</p>
+                    <ul>
+                        <li>Check the <strong>spelling</strong> of the URL in the address bar</li>
+                        <li>Try to access the page directly from the <a href="#">Emory homepage</a></li>
+                        <li>Use keywords to search for the page: 
+                        {{> molecules-search }}
+                        </li>
+                    </ul>
+
+                    <h2>Report this issue</h2>
+                    <p>Dynamically scale resource <a href="mailto:test@email.com">test@email.com</a> channels after prospective products. Appropriately.</p>
+
+                </div><!-- /column -->
+            </div><!-- /.row -->
+		</div><!-- /.container -->
+	</main><!--/main-->
+</div><!-- /.page -->
+
+<!-- Footer -->
+{{> organisms-footer }}

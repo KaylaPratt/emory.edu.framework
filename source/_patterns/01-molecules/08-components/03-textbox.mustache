@@ -1,0 +1,54 @@
+<div class="textbox textbox-{{ styleModifier }}">
+     
+    {{# image }}
+    <!-- Image at top that fills width -->
+    <div class="textbox__img-wrap">
+        <img class="textbox__img" src="{{ img.rectangle.src }}" alt="{{ img.rectangle.alt }}" />
+    </div><!-- /.textbox__img-wrap -->
+    {{/ image }}
+
+    <div class="textbox__textarea">
+        
+        <div class="textbox__header"> 
+            {{# textboxLabel }}
+            <!-- Label above headline for Topics and Categories -->
+            <span class="label">{{ label }}</span>
+            
+            {{/ textboxLabel }}
+
+            <h3 class="textbox__headline"><a href="#">{{ headline }}</a></h3>
+
+        </div><!-- /.textbox__header -->
+
+        {{# textboxExcerpt }}
+        <!-- Brief description below headline -->
+            <p>{{ excerpt }}</p>
+        {{/ textboxExcerpt }}
+
+        {{# externalBtn }}
+        <!-- A button in the top right corner denoting an external link -->
+        <a href="#" class="btn btn-external" title="Open article in new window"><span class="fa fa-external-link" aria-hidden="true"></span></a>
+        {{/ externalBtn }}
+
+        <div class="textbox__footer">
+            
+            {{# blockList }}
+            <!-- Vertical list of plain text or links -->
+            {{> atoms-block-list }}
+            {{/ blockList }}
+
+            {{# moreBtn }}
+            <!-- "Learn More" or other CTA -->
+            {{> atoms-button(btnStyle: "btn-default btn-lg btn-borderless", button: "Learn More") }}
+            {{/ moreBtn }}
+
+            {{# textboxMeta }}
+            <!-- Additional information about the author, date, time, etc. -->
+            <span><a href="#">{{ meta }}</a> | {{> atoms-time }}</span>
+            {{/ textboxMeta }}
+
+        </div><!-- /.textbox__footer -->
+
+    </div><!-- /.textbox__textarea -->
+
+</div><!-- /.textbox -->

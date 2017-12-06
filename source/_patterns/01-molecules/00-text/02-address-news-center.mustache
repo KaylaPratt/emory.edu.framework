@@ -1,0 +1,11 @@
+<address itemscope itemtype="http://schema.org/LocalBusiness">
+	
+	<div class="sr-only" itemprop="name">{{ contact.newsCenter.name }}</div>
+	<p translate="no">
+		{{ address.newsCenter.street }}<br />
+		{{ address.newsCenter.zip }}<br />
+		<a href="tel:+01-{{ contact.newsCenter.phone }}" title="Click only to dial on your mobile phone.">{{ contact.newsCenter.phone }}</a> main<br />
+		<span class="fa fa-fax" aria-hidden="true"></span> {{ contact.newsCenter.fax }} fax<br />
+		<a href="mailto:{{ contact.newsCenter.email }}">{{ contact.newsCenter.email }}</a>
+	</p>
+</address>

@@ -1,0 +1,52 @@
+<!-- Print cover page -->
+{{> organisms-print-cover-page(pageTitle: "Interior Page with Sidebar") }}
+
+<!-- Header -->
+{{> organisms-header:navbar-fixed-top }}
+
+<!-- Page content -->
+<div class="page interior-page" id="page">
+    {{> atoms-background }}
+	<main role="main">
+		<div class="container">
+            <div class="row">
+                <!-- main content body -->
+                <div class="col-sm-8 {{ leftCol }}">
+			        {{> organisms-interior-page-body }}
+                    <section>
+                        {{> organisms-infotext }}
+                    </section>
+                </div>
+                <!-- sidebar -->
+                <div class="col-sm-4 {{ rightCol }}">
+                    <section class="sidebar">
+                        <h4 class="heading-bg">Sidebar Nav</h4>
+                        {{> molecules-nav:nav-stacked }}
+                    </section>
+                    <section class="sidebar">
+                        <h4 class="underline">Suggested Content</h4>
+                        {{> molecules-textbox:cta(textboxExcerpt: true) }}
+                        {{> molecules-textbox }}
+                        {{> molecules-textbox }}
+                    </section>
+                </div>
+                {{# secondSidebar }}
+                <!-- sidebar -->
+                <div class="col-sm-4 col-lg-3">
+                    <section class="sidebar">
+                        <h4 class="underline">Upcoming Events</h4>
+                        {{> molecules-event-list }}
+                    </section>
+                    <section class="sidebar">
+                        <h4 class="heading-bg">Sidebar Nav</h4>
+                        {{> molecules-nav:nav-stacked }}
+                    </section>
+                </div>
+                {{/ secondSidebar }}
+            </div>
+		</div>
+	</main><!--/main-->
+</div>
+
+<!-- Footer -->
+{{> organisms-footer }}

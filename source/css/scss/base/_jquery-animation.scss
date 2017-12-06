@@ -1,0 +1,30 @@
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-sm-max){
+    // Toggle div class from hidden to shown
+    .toggle-reveal__horizontal,
+    .toggle-reveal__vertical,
+    .input-group.form-control,
+    .navbar-form .form-control,
+    .form-group.input-group,
+    .navbar-search .form-control {
+        width:100%;
+        position:relative;
+        top:0;
+        right:0;
+    }
+}
+@media(min-width:$screen-sm-min){
+    // Toggle div class from hidden to shown
+    .toggle-reveal__horizontal,
+    .toggle-reveal__vertical,
+    .input-group.form-control,
+    .navbar-form .form-control {
+        display:none;
+    }
+}
+@media(min-width:$screen-md-min){}
+@media(min-width:$screen-lg-min){
+
+}

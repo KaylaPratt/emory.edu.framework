@@ -1,0 +1,74 @@
+<!-- Articles textbox -->
+<div class="container">
+
+    <!-- The Latest at Emory -->
+    <section>
+        <h2 class="underline">The Latest at Emory</h2>
+        <div class="row">
+            <div class="col-sm-8">{{> organisms-textbox-articles }}</div>
+            <div class="clearfix visible-xs"></div>
+            <div class="col-sm-4">{{> organisms-textbox-external }}</div>
+        </div><!-- /.row -->
+    </section>
+
+    <!-- Featured Events -->
+    <section>
+        <div class="row">
+            <div class="col-sm-12">
+                {{> organisms-textbox-events }}
+            </div>
+        </div><!-- /.row -->
+    </section>
+
+</div><!-- /.container -->
+
+<!-- Marketing message -->
+<div class="container-fluid">  
+    <section>
+        <div class="row">
+            {{> organisms-marketing }}
+        </div>
+    </section>
+</div><!-- /.container-fluid -->
+
+<!-- Marketing message with image and quote -->
+<div class="container">
+    <section>
+        {{> organisms-marketing-feature }}
+        {{> organisms-marketing-feature:reverse(reverse: true, pullRight: "pull-right", leftCol: "col-sm-offset-1 col-sm-push-7 col-lg-offset-0", rightCol: "col-sm-pull-4 col-lg-pull-5") }}
+    </section>
+</div><!-- /.container -->
+
+<!-- Marketing message with Call to Action -->
+<div class="container-fluid">
+    <section>
+        <div class="row">
+            {{> organisms-marketing(cta: true) }}
+        </div>
+    </section>
+</div><!-- /.container-fluid -->
+
+<!-- Iconographics -->
+<div class="container">
+    <section>
+        {{> organisms-icon-grid }}
+        <h2 class="underline">More at Emory</h2>
+        {{> organisms-textbox-cta }}
+    </section>
+</div><!-- /.container -->
+
+<!-- Marketing message with Call to Action -->
+<div class="container-fluid">
+    <section>
+        <div class="row">
+            {{> organisms-marketing(cta: true) }}
+        </div>
+    </section>
+</div><!-- /.container-fluid -->
+
+<!-- Featured Articles textbox -->
+<div class="container">
+    <section>
+        {{> organisms-textbox-featured }}
+    </section>
+</div><!-- /.container -->

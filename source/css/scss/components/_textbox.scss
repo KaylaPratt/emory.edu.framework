@@ -1,0 +1,183 @@
+//------------------------------------//
+// TEXTBOX DEFAULTS                   //
+//------------------------------------//
+.textbox {
+    position:relative;
+    list-style-type:none;
+    margin-bottom:$grid-gutter-width;
+
+    // Image
+    .textbox__img {margin:0 auto!important;}
+    .textbox__img-wrap {@include img-fill(100%,300px);} // Full width image
+
+    // Text area
+    .textbox__textarea {
+        border:5px solid $brand-secondary;
+        padding:$grid-gutter-width;
+        p {margin:0;}
+    }
+    
+    // Header
+    .textbox__header > a {
+        text-decoration:none;
+        &:hover {text-decoration:underline;}
+    }
+
+    // Headline
+    .textbox__headline,
+    .textbox__headline > a {color:$text-color;}
+
+    /*
+    * Buttons in the top right of textbox, such
+    * as an external article external link button
+    */
+    .textbox__header .btn {
+        font-size:2.5rem;
+        padding-left:1rem;
+    }
+
+    /*
+    * Buttons in the bottom left of textbox, such
+    * as Learn More or other CTA
+    */
+    .textbox__footer .btn {color:$brand-secondary;background-color: transparent;}
+
+    /*
+    * Labels appear at the top, typically
+    * denoting a category or topic
+    */
+    .label {
+        background:$brand-secondary;
+        color:#fff;
+        margin:0 0 calc(#{$grid-gutter-width} / 2) 0;
+        font-size:1.5rem;
+        display:inline-block;
+    }
+
+    // Headline
+    .textbox__headline {
+        margin-top:0;
+        font-size: 2.15rem;
+        letter-spacing: 0.04rem;
+        line-height: 3.15rem;
+        font-family:$heading;
+        a {
+            text-decoration:none;
+            &:hover {text-decoration:underline;}
+        }
+    }
+
+    .btn-external {
+        font-size:2.5rem;
+        padding:0;
+    }
+
+    // Footer
+    .textbox__footer {
+        display:block;
+        border-top:1px solid transparent;
+    }
+
+    // Meta
+    .textbox__meta {border-bottom:1px solid rgba(0,0,0,.15);}
+    .textbox__meta a,
+    .textbox__footer a:not(.btn) {
+        text-decoration:underline;
+        &:hover {text-decoration:none;}
+    }
+}
+
+//------------------------------------//
+// VARIATIONS                         //
+//------------------------------------//
+
+// News Article
+.textbox.textbox-article {@include textbox($platinum);}
+
+// External News Article
+.textbox.textbox-external {
+    @include textbox($ocean);
+    .btn-external {
+        background-color:transparent;
+        color:#fff;
+    }
+}
+
+// Events
+.textbox.textbox-event {@include textbox(initial,$gold);}
+
+// Call to Action
+.textbox.textbox-cta {
+    @include textbox($brand-secondary); 
+    .label {
+        background:transparent;
+        padding:0;
+        color:inherit;
+    }
+
+    // Make block lists legible against dark background color
+    .block-list {
+        li {border-color:rgba(255,255,255,.25);}
+        a {
+            color:#fff;
+            text-decoration:none;
+            &:hover {color:$gold;}
+        }  
+    }
+    
+    // Header should not appear to be clickable... for now
+    .textbox__header > a {
+        cursor:default;
+        text-decoration:none;
+    }
+
+    // CTA button
+    .textbox__footer .btn {color:$gold;}
+}
+
+// Borderless
+.textbox.textbox-borderless {
+    .textbox__textarea {border:0;padding:0;}
+    .textbox__footer {border-color:$platinum;}
+} 
+
+
+// Media Queries
+@media(max-width:$screen-xs-max){
+    .textbox {
+        // Headline
+        .textbox__headline {
+            font-size:1.75rem;
+            line-height:2rem;
+        }
+        // External buttons
+        .btn-external {
+            position:absolute;
+            top:calc(#{$grid-gutter-width} - 8px);
+            right:$grid-gutter-width;
+        }
+    }
+}
+@media(min-width:$screen-sm-min){
+    //------------------------------------//
+    // VARIANT TEXTBOXES                  //
+    //------------------------------------//
+    .textbox.landing { // Appears first on News Center
+        .textbox__headline {
+            font-size:3.5rem;
+            line-height:4rem;
+        }
+        .label {font-size:2rem;}
+    }
+    .textbox.featured { // Featured on News Center
+        .textbox__headline {font-size:2.75rem;}
+    }
+}
+@media(min-width:$screen-md-min){
+    .textbox .btn-external {
+        position:absolute;
+        top:calc(#{$grid-gutter-width} - 8px);
+        right:$grid-gutter-width;
+    }
+}
+@media(min-width:$screen-lg-min){}

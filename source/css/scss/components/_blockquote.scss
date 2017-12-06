@@ -1,0 +1,74 @@
+blockquote,
+.blockquote {
+    color:$peanut;
+    font-family:$rasmusbold;
+    font-style:italic;
+    border:none;
+    padding:3rem 1rem;
+    margin:0 auto;
+    // Quote area
+    p,.blockquote__quote {
+        font-size:3rem;
+        line-height:3.75rem;
+        &:before,
+        &:after {
+            // Align quote icons
+            font-family:'Fontawesome';
+            font-size: 1.5rem;
+            vertical-align: top;
+            position: relative;
+            top: -5px;
+        }
+        &:before {content:$fa-var-quote-left " ";}
+        &:after {content:" " $fa-var-quote-right;}
+    }
+    
+    // Citation area
+    cite,.blockquote__cite {
+        border-top:2px solid $timberwolf;
+        font-family:$font-family-sans-serif;
+        font-size:1.25rem;
+        color:$gray-light;
+        padding-top:1rem;
+        display:inline-block; 
+        &:before {content:"- ";} // Add dash before citation
+    }
+
+    // Floats
+    &.pull-right,
+    &.pull-left {border:0;}
+
+    // Buttons
+    .btn {font-style:normal;}
+}
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    blockquote,
+    .blockquote {
+        // Make text aligned left on mobile only
+        &.pull-right,
+        &.pull-left {text-align:left;}
+    }
+}
+@media(min-width:$screen-sm-min){
+    blockquote,
+    .blockquote {
+        // Floats
+        &.pull-right,
+        &.pull-left {width:60%;}
+
+        // Quote area
+        p,.blockquote__quote {
+            font-size:4rem;
+            line-height:4.75rem;
+        }
+        // Citation area
+        cite,.blockquote__cite {
+            font-size:2rem;
+            padding-top:1rem;
+            margin-top:.5rem;
+        }
+    }
+}

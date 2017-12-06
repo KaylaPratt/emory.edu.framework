@@ -1,0 +1,260 @@
+/* --- TEXTBOX -----------------------
+ *
+ * One of the most common
+ * components on the website:
+ * class="textbox"
+ * Choose a solid background color,
+ * or a border color, and/or custom
+ * <label> color for each feed-item.
+ *
+ * ----------------------------------*/
+
+@mixin textbox(
+  $background-color: initial,
+  $border-color: null,
+  $label-color: null) {
+    .textbox__footer {
+      padding-top:calc(#{$grid-gutter-width} / 2);
+      margin-top:calc(#{$grid-gutter-width} / 2);
+    }
+    // Define a background color
+    @if ($background-color) {
+      .textbox__textarea {
+        background-color:$background-color;
+        border:0;
+      }
+      .label {
+        background-color:#fff;
+        color:$background-color;
+      }
+      .textbox__textarea,
+      .textbox__header,
+      .textbox__header a,
+      .textbox__header .btn,
+      .textbox__headline,
+      .textbox__footer {color:#fff;}
+      .textbox__footer {border-color:rgba(255,255,255,.25);}
+      .textbox__meta a,
+      .textbox__footer a {color:$gold;}
+    }
+    // If background color is $platinum
+    @if ($background-color == $platinum) {
+      .textbox__textarea {border:0;}
+      .textbox__textarea,
+      .textbox__header,
+      .textbox__header a,
+      .textbox__header .btn,
+      .textbox__headline,
+      .textbox__footer {color:$text-color;}
+      .textbox__footer {border-color:rgba(0,0,0,.15);}
+      .textbox__meta a,
+      .textbox__footer a {color:$link-color;}
+      .label {
+        background-color:$brand-secondary;
+        color:#fff;
+      }
+    }
+    // Define a border color
+    @if ($border-color) {
+      .textbox__textarea {
+        background:transparent;
+        border:5px solid $border-color;
+      }
+      .label {
+        background-color:$border-color;
+        color:#fff;
+      }
+      .textbox__textarea,
+      .textbox__header,
+      .textbox__header a,
+      .textbox__header .btn,
+      .textbox__headline,
+      .textbox__footer {color:$text-color;}
+      .textbox__footer {border-color:rgba(0,0,0,.15);}
+      .textbox__meta a,
+      .textbox__footer a {color:$link-color;}
+    }
+    // Define a label color
+    @if ($label-color) {
+      .label {
+        background-color:$label-color;
+        color:#fff;
+      }
+    }
+}
+
+/* --- LABEL -----------------------
+ *
+ * Define the background/text
+ * colors, and font size of a
+ * <label>, along with automatically
+ * adding the default label styles.
+ *
+ * ----------------------------------*/
+
+@mixin label(
+  $bg,
+  $text-color,
+  $font-size) {
+    display:inline-block;
+    padding:.5em 1em;
+    text-transform:uppercase;
+    text-decoration:none;
+    letter-spacing:.15em;
+    font-size:$font-size;
+    font-family:$font-family-sans-serif;
+    background:$bg;
+    color:$text-color;
+}
+
+/* --- GOLD-FRAME -------------------
+ *
+ * Add to <div> to create an
+ * absolutely positioned frame that
+ * can sit either behind or in front
+ * of other elements.
+ *
+ * ----------------------------------*/
+
+@mixin gold-frame(
+  $size,
+  $top,
+  $right,
+  $bottom,
+  $left,
+  $zindex) {
+    content:'';
+    position:absolute;
+    width:$size;
+    height:$size;
+    border:5px solid $gold;
+    top:$top;
+    right:$right;
+    bottom:$bottom;
+    left:$left;
+    z-index:$zindex;
+}
+
+/* --- GRADIENT ---------------------
+ *
+ * Attach to a <div> for background
+ * colors as either a vertical,
+ * horizontal, or radial (default)
+ * gradient.
+ *
+ * ----------------------------------*/
+
+@mixin gradient(
+  $start-color,
+  $end-color,
+  $orientation) {
+    background: $start-color;
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else { // to use radial, put ' ' as $orientation
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+/* --- OVERLAP ----------------------
+ *
+ * Many elements need to overlap
+ * vertically into the preceding
+ * content. Attach this to a <div>
+ * to define how far upward to pull
+ * the content.
+ *
+ * ----------------------------------*/
+
+@mixin overlap($margin) {
+  margin-top:(-$margin);
+  z-index:99;
+  position:relative;
+}
+
+/* --- BACKGROUND-COVER --------------
+ *
+ * Attach to a <div> to create a
+ * background image that fully spans
+ * the width of the container. Set
+ * $attachment as 'fixed' for a
+ * parallax effect.
+ *
+ * ----------------------------------*/
+
+@mixin background-cover(
+  $bg,
+  $height,
+  $attachment: null) {
+    background:
+      $brand-primary // Fallback color
+      url($bg)
+      center center / cover
+      no-repeat;
+    // Media Queries
+    @media(max-width:$screen-sm-max){height:calc(#{$height} / 2.5);}
+    @media(min-width:$screen-sm-min){height:calc(#{$height} / 1.75);}
+    @media(min-width:$screen-md-min){height:unquote($height);}
+    // Mobile iOS fixed attachment bug https://css-tricks.com/forums/topic/full-page-backgrounds-on-ios-background-size-cover/
+    // Allow for custom attachment on large viewports
+    @media(min-width:$screen-lg-min){background-attachment:unquote($attachment);}
+}
+
+/* --- STROKE ------------------------
+ *
+ * Add a thin stroke of any color.
+ * Good for legibility and contrast.
+ *
+ * ----------------------------------*/
+
+@mixin stroke($color) {
+  text-shadow: -1px 0 $color,0 1px $color,1px 0 $color,0 -1px $color;
+}
+
+/* --- ICON --------------------------
+ *
+ * Use this on a <button> or <a> 
+ * to quickly create an icon with
+ * colors defined in _global-variables
+ * and Fontawesome icon codes.
+ *
+ * ----------------------------------*/
+
+@mixin icon(
+  $bg,
+  $text-color,
+  $icon) {
+    background:$bg;
+    color:$text-color;
+    &:before {
+      content:$icon;
+      font-family:'FontAwesome';
+    }
+}
+
+/* --- IMG-FILL ---------------------- 
+ *
+ * Use this on the parent container to 
+ * make the child <img> fill the parent
+ * proportionally.
+ *
+ * ----------------------------------*/
+
+@mixin img-fill(
+  $width,
+  $height) {
+    margin:0 auto;
+    width:$width;
+    max-height:$height;
+    overflow:hidden;
+    img {
+      object-fit:cover;
+      width:$width;
+      height:auto;
+    }
+}

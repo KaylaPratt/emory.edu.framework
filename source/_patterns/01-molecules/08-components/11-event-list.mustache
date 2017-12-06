@@ -1,0 +1,21 @@
+<div class="event-list">
+    <ol>
+        {{# listItems.four }}
+        <li>
+            <div class="event-list__date">
+                <div>
+                    <span>{{ day.long }}</span>
+                    <span>{{ month.short }}</span>
+                </div>
+            </div>
+            <div class="event-list__textarea">
+                <h3 class="event-list__headline"><a href="#">{{ list.medium }}</a></h3>
+                <div class="event-list__info">
+                    <span class="event-list__time">{{ hour.short }}:{{ minute.long }} {{ hour.ampm }}</span>
+                    <span class="event-list__location">{{ location }}</span>
+                </div>
+            </div>
+        </li>
+        {{/ listItems.four }}
+    </ol>
+</div>

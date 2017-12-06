@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'RasmusBold';
+    src: url('../fonts/emory-brand/Rasmus-bold-webfont.eot');
+    src: url('../fonts/emory-brand/Rasmus-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/emory-brand/Rasmus-bold-webfont.woff2') format('woff2'),
+         url('../fonts/emory-brand/Rasmus-bold-webfont.woff') format('woff'),
+         url('../fonts/emory-brand/Rasmus-bold-webfont.ttf') format('truetype'),
+         url('../fonts/emory-brand/Rasmus-bold-webfont.svg#rasmusregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'RasmusRegular';
+    src: url('../fonts/emory-brand/Rasmus-regular-webfont.eot');
+    src: url('../fonts/emory-brand/Rasmus-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/emory-brand/Rasmus-regular-webfont.woff2') format('woff2'),
+         url('../fonts/emory-brand/Rasmus-regular-webfont.woff') format('woff'),
+         url('../fonts/emory-brand/Rasmus-regular-webfont.ttf') format('truetype'),
+         url('../fonts/emory-brand/Rasmus-regular-webfont.svg#rasmusregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'ConduitBold';
+    src: url('../fonts/emory-brand/conduit-bold-webfont.eot');
+    src: url('../fonts/emory-brand/conduit-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/emory-brand/conduit-bold-webfont.woff2') format('woff2'),
+         url('../fonts/emory-brand/conduit-bold-webfont.woff') format('woff'),
+         url('../fonts/emory-brand/conduit-bold-webfont.ttf') format('truetype'),
+         url('../fonts/emory-brand/conduit-bold-webfont.svg#rasmusregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}

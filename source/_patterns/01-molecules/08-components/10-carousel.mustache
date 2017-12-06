@@ -1,0 +1,175 @@
+<div class="{{ row }}">
+
+{{# pullLeft }}
+<div class="{{ leftCol }}">
+{{/ pullLeft }}
+
+{{# pullRight }}
+<div class="{{ leftCol }}">
+{{/ pullRight }}
+
+<div id="{{ carousel }}" class="carousel slide">
+
+    {{# indicators }}
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#{{ carousel }}" data-slide-to="0" class="active"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="1"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="2"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="3"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="4"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="5"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="6"></li>
+        <li data-target="#{{ carousel }}" data-slide-to="7"></li>
+    </ol>
+    {{/ indicators }}
+
+    <!-- Large slides wrapper -->
+    <ol class="carousel-inner">
+        <!-- Slide -->
+        <li class="active item" data-slide-number="0">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1000" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <h3>{{ headline }}</h3>
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="1">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1001" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="2">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1002" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <h3>{{ headline }}</h3>
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="3">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1003" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="4">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1004" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <h3>{{ headline }}</h3>
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="5">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1005" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="6">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1006" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <h3>{{ headline }}</h3>
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+        <!-- Slide -->
+        <li class="item" data-slide-number="7">
+            <img alt="Alt Text" src="https://unsplash.it/1200/500?image=1008" class="img-responsive">
+            <div class="carousel-caption carousel-caption-{{ captionStyle }}">
+                <p>{{ description.short }}</p>
+            </div>
+        </li>
+    </ol>
+
+    <!-- Left and right controls -->
+    <button type="button" class="left carousel-control" data-target="#{{ carousel }}" data-slide="prev" name="Previous slide">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous slide</span>
+    </button>
+    <button type="button" class="right carousel-control" data-target="#{{ carousel }}" data-slide="next" name="Next slide">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next slide</span>
+    </button>
+</div><!--/Large slides wrapper -->
+
+{{# thumbnails }}
+</div><!--/leftCol -->
+
+{{# pullLeft }}
+<div class="{{ rightCol }}">
+{{/ pullLeft }}
+
+{{# pullRight }}
+<div class="{{ rightCol }}">
+{{/ pullRight }}
+
+    <ol class="carousel-thumbs list-inline hidden-xs display-sm-block">
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-0" class="selected">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1000" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-1">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1001" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-2">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1002" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-3">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1003" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-4">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1004" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-5">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1005" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-6">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1006" class="img-responsive">
+            </a>
+        </li>
+        
+        <!-- Thumbnail -->
+        <li>
+            <a id="carousel-selector-7">
+                <img alt="Alt Text" src="https://unsplash.it/100?image=1008" class="img-responsive">
+            </a>
+        </li>
+    </ol><!--/Thumbnails wrapper -->
+
+</div><!--/rightCol -->
+
+</div><!--/row -->
+{{/ thumbnails }}

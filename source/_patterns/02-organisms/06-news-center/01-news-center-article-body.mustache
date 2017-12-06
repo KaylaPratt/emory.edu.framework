@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        
+        <!-- Left column with Article body -->
+        <div class="col-sm-8 col-md-7 overlap">
+            <article class="news-center-article">
+                {{> organisms-article-header }}
+                {{> organisms-article-body }}
+            </article>
+            <!-- Social media, sharing, and comments -->
+            {{> molecules-social-share }}
+            {{> organisms-comment-thread }}
+        </div><!-- /column -->
+
+        <!-- Sidebar -->
+        <div class="col-sm-4 col-md-5 col-lg-4 col-lg-offset-1">
+            <section class="sidebar">
+                <h2 class="underline">Related <span class="fa fa-newspaper-o pull-right" aria-hidden="true"></span></h2>
+                {{> molecules-textbox:article(textboxLabel: true, textboxExcerpt: true, textboxMeta, true, label: "Article") }}
+                {{> molecules-tag-cloud }}
+            </section>
+            <section class="sidebar">
+                <h2 class="underline">Upcoming <span class="fa fa-calendar pull-right" aria-hidden="true"></span></h2>
+                {{> molecules-textbox:event(textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Tomorrow") }}
+            </section>
+        </div><!-- /column -->
+        
+    </div><!-- /.row -->
+</div><!-- /.container -->	

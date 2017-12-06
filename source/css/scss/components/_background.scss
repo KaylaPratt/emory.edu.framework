@@ -1,0 +1,53 @@
+.background {
+    width:100%;
+    height:100px;
+    position:relative;
+    
+    //------------------------------------//
+    // DEFAULT BACKGROUND                 //
+    //------------------------------------//
+    background:
+        $brand-primary
+        url('http://template.emory.edu/160-over-90/public/img/components/divider/1.jpg')
+        center center / cover
+        no-repeat
+        scroll;
+    
+    //------------------------------------//
+    // EMORY BLUE BACKGROUND              //
+    //------------------------------------//
+    &.background-blue {background-image:url('http://template.emory.edu/160-over-90/public/img/components/divider/1.jpg');}
+    
+    //------------------------------------//
+    // EMORY GOLD BACKGROUND              //
+    //------------------------------------//
+    &.background-gold {background-image:url('http://template.emory.edu/160-over-90/public/img/components/divider/1.jpg');}
+    
+    //------------------------------------//
+    // DESATURATED BACKGROUND             //
+    //------------------------------------//
+    &.background-desaturate {
+        overflow:auto;
+        background-color:transparent;
+        background-image:none;
+        
+        // Super hax to add background CSS filters
+        &:before {
+            content: "";
+            background-image:url('http://template.emory.edu/160-over-90/public/img/components/divider/1.jpg');
+            position: absolute; 
+            right:0;
+            left: 0;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height:100px;
+            filter:saturate(25%) opacity(50%);
+        }
+    }
+}
+
+.background-cover {
+    // background-cover(src, height, attachment)
+    @include background-cover('https://unsplash.it/1600/400','400px', 'fixed');
+}

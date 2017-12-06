@@ -1,0 +1,21 @@
+main {padding:7rem 0;}
+.overlap {@include overlap(50px);} // Move content vertically upwards to overlap preceding content
+
+// Make up space for the Fixed navbar
+.page:not(.microsite-page) {padding-top:$navbar-height;}
+
+// Spacing for each section
+.page {
+    section:not(.sidebar) {padding:$grid-gutter-width 0;}
+    // Sidebars
+    section.sidebar {margin:0 0 5rem 0;}
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-sm-max){}
+@media(min-width:$screen-sm-min){
+    // Make up space for the Fixed + stacked navbar
+    .page:not(.microsite-page) {padding-top:calc( (#{$navbar-height} + (#{$navbar-height / 2}) ) );}
+}

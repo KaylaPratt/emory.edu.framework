@@ -1,0 +1,14 @@
+.modal {
+    .modal-header {background-color:$brand-secondary;}
+    .modal-title {color:#fff;}
+    .close {
+        color:#fff;
+        opacity:.75;
+        @include stroke(#000);
+    }
+    .modal-content {
+        background:$platinum;
+        border-color:$brand-primary;
+    }
+    .modal-footer {border-color:$pastel;}
+}

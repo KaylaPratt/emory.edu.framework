@@ -1,0 +1,61 @@
+<div class="container">
+    <img src="https://unsplash.it/1000/500" class="img-responsive overlap" alt="Alt Text"/>
+    <br />
+    <div class="row">
+        
+        <!-- Introduction -->
+        <div class="col-sm-8">
+            <section>
+                <h1>Topic: {{ topic.health.title }}</h1>
+                <p class="lead">Efficiently harness B2B partnerships after 24/7 niche markets. Holisticly.</p>
+                <p>Objectively target worldwide methods of empowerment without backend relationships. Efficiently customize collaborative relationships without stand-alone mindshare. Energistically matrix effective.</p>
+                {{> molecules-tooltip }}
+            </section>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-sm-4">
+            <section class="sidebar">
+                {{> molecules-tag-cloud }}
+            </section>
+        </div>
+
+    </div><!-- /.row -->
+
+    <!-- Featured Topics -->
+    <h2 class="underline">Featured in {{ topic.health.title }}</h2>
+    <div class="row">
+        <section>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0">
+                {{> molecules-textbox:article(image: true, textboxLabel: true, textboxExcerpt: true, textboxMeta: true, label: "Health", headline: "Art for All: Fahamu Pecou takes his painting to the people", excerpt: "Conveniently provide access to diverse manufactured products before turnkey leadership skills. Quickly develop customized methodologies vis-a-vis cooperative.", meta: "Emory Report") }}
+                <div class="row">
+                    <div class="col-sm-6">{{> molecules-textbox:external(textboxLabel: true, externalBtn: true, textboxMeta: true, label: "CNN", meta: "In the News") }}</div>
+                    <div class="col-sm-6">{{> molecules-textbox:external(textboxLabel: true, externalBtn: true, textboxMeta: true, label: "New York Times", meta: "In the News") }}</div>
+                </div><!-- /.row -->
+                <!-- Featured internal articles -->
+                <div class="row">
+                    <div class="col-sm-6">{{> molecules-textbox:article(textboxLabel: true, textboxMeta: true, label: "Health", headline: "Essential diagnostic tests list needed to match essential medicines list, say health experts", meta: "Emory Winship") }}</div>
+                    <div class="col-sm-6">{{> molecules-textbox:article(textboxLabel: true, textboxMeta: true) }}</div>
+                </div><!-- /.row -->
+            </div><!-- /column -->
+            <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+                {{> molecules-textbox:article(image: true, textboxLabel: true, textboxMeta: true, label: "Health", headline: "DARPA $6.4M contract supports malaria research aimed at enhancing resilience", meta: "Maureen McGavin") }}
+                {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true) }}
+                {{> molecules-textbox:article(textboxLabel: true, textboxMeta: true) }}
+            </div><!-- /column -->
+        </section>
+    </div><!-- /.row -->
+
+    <!-- Photo gallery -->
+    <section>
+        <h2 class="underline">Photos tagged as {{ topic.health.title }}</h2>
+         {{> molecules-carousel(thumbnails: true, pullLeft: true, carousel: "carousel-thumbs", captionStyle: "mini", row: "row", leftCol: "col-sm-7", rightCol: "col-sm-5") }}
+         <p class="pull-right">View more photos on <a href="{{ socialMedia.instagram.href }}" title="Emory Instagram">Emory Instagram</a> <span class="social-media"><a href="{{ socialMedia.instagram.href }}" class="btn btn-sm btn-{{ socialMedia.instagram.class }}" title="{{ socialMedia.instagram.title }}"><span class="sr-only">{{ socialMedia.instagram.title }}</span></a></span></p>
+    </section>
+
+    <!-- Article archive -->
+    <section>
+        <h2 class="underline">{{ topic.health.title }} Archive</h2>
+        {{> organisms-textbox-archive }}
+    </section>
+</div><!-- /.container -->

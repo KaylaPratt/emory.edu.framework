@@ -1,0 +1,285 @@
+.navbar {
+
+    // Remove border
+    border:0;
+
+    // Branding or Logo
+    .navbar-brand {
+        width:175px;
+        padding-top:1.75rem;
+    }
+
+    //------------------------------------//
+    // SEARCH BAR                         //
+    //------------------------------------//
+    .navbar-search {
+        margin:0 0 1rem 0;
+        .form-control {padding:0 1rem;}
+    }
+
+    //------------------------------------//
+    // INPUT GROUPS                       //
+    //------------------------------------//
+    .input-group {
+        .form-control,
+        .input-group-btn,
+        .input-group-btn .btn {
+            // Make buttons/inputs same height
+            height:35px;
+            line-height:23px;
+        }
+        .input-group-btn .btn-default {background:transparent;color:$brand-secondary;}
+        .input-group-btn .btn:hover,
+        .input-group-btn .btn:active { background:$pastel;color:$brand-secondary;}
+        .input-group-btn .btn {border:0;}
+    }
+
+    // Open and hovered inputs
+    &.navbar-default .navbar-nav > .open > a,
+    &.navbar-default .navbar-nav > .open > a:hover {
+        border-left:1px solid $pastel;
+        border-right:1px solid $pastel;
+        background-color:$platinum;
+    }
+
+    //------------------------------------//
+    // MOBILE TOGGLE BUTTON                         //
+    //------------------------------------//
+    .navbar-toggle {
+        border-color:darken($pastel, 6.5%);
+        background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAMAAAANxBKoAAAAP1BMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZlrBqSAAAAFHRSTlMAAQIFCQoUGi0uOEZHTk9Uzun1/TaK3RIAAABMSURBVBgZ7cE5AoAgEAPA4CreB7j/f6ttqtjQsTMIoSPJGH4UZzu06uyCNmWW0NKYWYJWnZ3QirMD2mAMTc0rWQza6+yG9jjbEEI/PtBCCEMpLb6ZAAAAAElFTkSuQmCC');
+        background-position:center;
+        &:hover {background-color:darken($pastel, 6.5%)}
+    }
+
+    // Dropdown menu .block-list fix
+    .dropdown-menu.block-list:last-of-type {margin-bottom:0;}
+
+    //------------------------------------//
+    // STACKED NAVBAR                     //
+    //------------------------------------//
+    
+    /*
+    * Some Navbars have two Stacked rows.
+    * Primary rows are the second (last) row
+    * and are larger and more emphasized
+    * than Secondary rows
+    */
+
+    &.navbar-stacked {
+        
+        // Remove padding .navbar-collapse
+        .navbar-collapse {padding:0;}
+        
+        // Branding Area
+        .nav-branding {
+            background:$timberwolf;
+            border-right:1px solid $pastel;    
+        }
+    }
+
+    //------------------------------------//
+    // PRIMARY NAVBAR ROW                 //
+    //------------------------------------//
+    .navbar-row-primary {background:$timberwolf;}
+    
+    //------------------------------------//
+    // SECONDARY NAVBAR ROW               //
+    //------------------------------------//
+    .navbar-row-secondary {background:$pastel;}
+
+}
+
+//------------------------------------//
+// FIXED NAVBAR HIDES ON SCROLL       //
+//------------------------------------//
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);  
+    &.navbar-hidden {overflow:hidden;}
+}
+.navbar-fixed-top.navbar-hidden {transform:translateY(-100%);}
+.navbar-fixed-bottom.navbar-hidden {transform:translateY(100%);}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    .navbar {
+        .input-group-btn {width:35px;}
+        .navbar-row-secondary,
+        .navbar-row-primary, {padding:1.5rem 0;}
+        // BS navbar collapse height fix, make dropdown toggles open fully
+        &.navbar-fixed-top .navbar-collapse,
+        &.navbar-fixed-bottom .navbar-collapse {max-height:100vh;}
+    }
+}
+@media(min-width:$screen-sm-min){
+    
+    // -- Default navbar styles -- //
+    .navbar { 
+        // Branding or Logo
+        .navbar-header {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+        .navbar-header,
+        .navbar-brand {
+            width:100%;
+            height:100%;
+            
+            // Override Bootstrap margin meddling
+            margin-left:0!important;
+        }
+        .navbar-brand {
+            padding:1rem 0;
+            > div {
+                // Center the Branding
+                display:flex;
+                flex-flow:column nowrap;
+                justify-content:center;
+                align-items:center;
+                height:100%;
+            }
+            .logo {height:100%;max-width:100%;}
+        }
+        
+        // Search bar
+        .navbar-search {
+            margin:0;
+            height:$navbar-height;
+            .nav-search {
+                // Input positioning, color, font
+                position: absolute;
+                z-index:1;
+                top: 0;
+                right: 100%!important;
+                width: auto;
+                background:$snow;
+                font-size:2rem;
+            }
+
+            // If floating right, remove gutter spacing
+            &.navbar-right {margin-right:calc( ( (-#{$grid-gutter-width}) / 2 ) - 1px )}
+        }
+        
+        // Make columns equal height
+        .row-eq-height {
+            height:$navbar-height;
+            > div {height:100%;}
+            // Center the Branding
+            > div:first-of-type {
+                display:flex;
+                flex-flow:column nowrap;
+                justify-content:center;
+                align-items:center;
+            }
+        }
+        
+        // Navbar primary/secondary rows
+        .navbar-row-primary,
+        .navbar-row-secondary {
+            width:100%;
+            height:$navbar-height;
+        }
+
+        // Input groups
+        .input-group .input-group-btn .btn {
+            // Remove default button borders and add a left-border
+            border:0;
+            border-left:1px solid $pastel;
+        }
+
+        // Dropdown
+        .dropdown {
+            .dropdown-toggle {
+                border-left:1px solid transparent;
+                border-right:1px solid transparent;
+            }
+            .dropdown-menu {
+                // Add link Chevron arrows
+                > li > a {
+                padding:1rem 2rem;
+                    &:after {
+                    font-family:'Fontawesome';
+                    content:' ' $fa-var-chevron-right;
+                    font-size:1rem;
+                    margin-left:.5rem;
+                    }
+                }
+            }
+
+            // Dropdown Toggle button style
+            .dropdown-toggle {height:calc(#{$navbar-height} - .5px);}
+        }
+    }
+
+    // -- Primary and Secondary Row Defaults -- //
+    .navbar.navbar-stacked {
+        
+        // Primary Navbar Row
+        .navbar-row-primary {height:calc(#{$navbar-height} + 1px);}
+        
+        // Secondary Navbar Row
+        .navbar-row-secondary {
+            height:calc( (#{$navbar-height} / 2) - .5px );
+            
+            // Make menu fit into smaller space
+            .navbar-nav > li > a {
+                padding:0 .75rem;
+                line-height:calc( (#{$navbar-height} / 2) - .5px );
+            }
+            .navbar-search {padding:0;margin:0;}
+            .input-group .nav-search, // Input box
+            .navbar-search, // Search button
+            .navbar-search .input-group,
+            .navbar-search .input-group-btn,
+            .navbar-search .input-group-btn .btn {height:calc( (#{$navbar-height} / 2) - .5px );line-height:inherit;}
+            .navbar-search .input-group-btn .btn {font-size:1.75rem;}
+
+            // Dropdown Toggle button style
+            .dropdown-toggle {height:calc( (#{$navbar-height} / 2) - .5px);}
+        }
+        
+        // Make columns equal height
+        .row-eq-height {height:calc(#{$navbar-height} + (#{$navbar-height} / 2));}
+    }
+
+    //------------------------------------//
+    // FIXED NAVBAR                       //
+    //------------------------------------//
+    .navbar-fixed-top,
+    .navbar-fixed-bottom {
+        // Fixed menu height
+        .navbar-collapse {max-height:initial;}
+    }
+}
+@media(max-width:$screen-xs-max){
+    .navbar .navbar-search {
+        .nav-search {
+            display:block!important;
+            width:100%;
+            .input-group {width:calc(100% - 35px;);}
+        }
+    }
+}
+@media(min-width:$screen-sm-min){
+    .navbar .navbar-search {
+        // Submit button visible on mobile
+        .hide-submit {position: absolute; left: -9999px; width: 1px; height: 1px;}
+    }
+}
+@media(min-width:$screen-md-min){
+    
+    // Primary and Secondary Row Defaults
+    .navbar.navbar-stacked {  
+        // Secondary Navbar Row
+        .navbar-row-secondary {
+            
+            // Make menu fit into smaller space
+            .navbar-nav > li > a {padding:0 1.5rem;}
+        } 
+    }
+}
+@media(min-width:$screen-lg-min){}

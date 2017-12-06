@@ -1,0 +1,37 @@
+.popover {background:$platinum;padding:0;}
+
+// Arrows
+.popover.top .arrow:after {border-top-color:$platinum;}
+.popover.right .arrow:after {border-right-color:$platinum;}
+.popover.bottom .arrow:after {border-bottom-color:$platinum;}
+.popover.left .arrow:after {border-left-color:$platinum;}
+
+// General popover style
+.popover-title,
+.popover-content {
+    background:none;
+    font-family:$font-family-sans-serif;
+    border-color:$pastel;
+}
+
+// Popover title styles
+.popover-title {
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#fff;
+    background-color:$brand-info;
+    text-transform:uppercase;
+    letter-spacing:.15rem;
+    margin:0!important;
+}
+
+// Popover contents
+.popover-content {
+    min-width:200px;
+    color:$text-color;
+}
+
+// Popover button styles
+[data-toggle="popover"] {color:$brand-info;border:0;background-color:transparent;}
+[data-toggle="popover"]:hover {cursor:help;text-decoration:none;color:$pumpkin;}
+[data-toggle="popover"]:focus {background-color:transparent!important;color:$brand-info!important;}

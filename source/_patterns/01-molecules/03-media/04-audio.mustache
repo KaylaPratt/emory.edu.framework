@@ -1,0 +1,15 @@
+<div class="{{ styleModifier }}">
+    
+    {{# audioCaption }}
+    <p>{{ excerpt }}</p>
+    {{/ audioCaption }}
+    
+    <audio controls>
+
+        <source src="{{ includesPath }}images/media/greensleeves-sir-john.ogg" type="audio/ogg">
+        <source src="{{ includesPath }}images/media/greensleeves-sir-john.mp3" type="audio/mpeg">
+        
+        Your browser does not support HTML5 <code>audio</code>
+    </audio>
+
+</div>

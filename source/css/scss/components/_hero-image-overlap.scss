@@ -1,0 +1,79 @@
+.hero-image-overlap {
+    .hero-image-overlap__img,
+    .hero-image-overlap__img.hero-image-overlap__img-wide {
+        // Fill width of container and hide excess
+        margin:0 auto;
+        width:100%;
+        overflow:hidden;
+        img {object-fit:cover;}
+    }
+
+    .hero-image-overlap__label {@include label($brand-secondary,#fff,2rem);}
+    .hero-image-overlap__title {
+        font-family:$rasmusbold;
+        text-transform:uppercase;
+        color:$brand-secondary;
+    } 
+}
+
+//------------------------------------//
+// MEDIA QUERIES                      //
+//------------------------------------//
+@media(max-width:$screen-xs-max){
+    .hero-image-overlap {
+        background:$platinum;
+        padding-bottom:2rem;
+    }
+    .hero-image-overlap__img img {
+        width:100%;
+        height:auto;
+    } 
+}
+@media(min-width:$screen-sm-min){
+    .hero-image-overlap__img img {
+        max-width:calc(100% - 100px);
+        position:absolute;
+        top:50px;
+        left:50%;
+        transform:translateX(-50%);
+        z-index:-1;
+    }
+    .hero-image-overlap__img.hero-image-overlap__img-wide img {
+        width:calc(100% - 100px);
+        height:360px;
+    }
+    .hero-image-overlap__textarea {
+        position:relative;
+        &:before {@include gold-frame(200px,-75px,inherit,inherit,-75px,-1);}
+    }
+    .hero-image-overlap__bg {
+        position:relative;
+        z-index:-2;
+        height:360px;
+        background:
+            $brand-primary
+            url('http://template.emory.edu/160-over-90/public/img/components/divider/1.jpg')
+            center center / cover
+            no-repeat
+            scroll;
+    }
+
+    .hero-image-overlap__textarea {
+        position:relative;
+        padding:2rem 3rem;
+        background:$platinum;
+        .hero-image-overlap__label {font-size:2rem;}
+        .hero-image-overlap__title {font-size:6rem;}
+    }
+}
+@media(min-width:$screen-md-min){
+    .hero-image-overlap {
+        .hero-image-overlap__bg {
+            height:490px;
+            .hero-image-overlap__img img {height:490px;} 
+        }
+    }
+}
+@media(min-width:$screen-lg-min){
+    .hero-image-overlap__textarea:before {@include gold-frame(375px,-75px,inherit,inherit,-75px,-1);}
+}
