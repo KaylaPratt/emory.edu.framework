@@ -97,12 +97,10 @@ h1,h2,h3,h4,h5,h6 {
 
 // Heading Group
 .heading-group {
-    & > :first-child {text-transform:capitalize;}
-    & > :last-child {
-        margin-top:.5rem;
-        font-family:$font-family-sans-serif;
-    }
+    .heading-group__title,
+    .heading-group__subtitle {margin-bottom:1rem}
+    .heading-group__subtitle {font-family:$font-family-sans-serif}
     border-bottom:5px solid $brand-secondary;
-    margin-bottom:1.5em;
-    padding-bottom:.5em;
+    margin-bottom:2rem;
+    padding-bottom:1rem;
 }

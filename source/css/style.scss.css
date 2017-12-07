@@ -452,12 +452,12 @@ h1.label, h2.label, h3.label, h4.label, h5.label, h6.label {
 
 .heading-group {
   border-bottom: 5px solid #004b97;
-  margin-bottom: 1.5em;
-  padding-bottom: .5em; }
-  .heading-group > :first-child {
-    text-transform: capitalize; }
-  .heading-group > :last-child {
-    margin-top: .5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem; }
+  .heading-group .heading-group__title,
+  .heading-group .heading-group__subtitle {
+    margin-bottom: 1rem; }
+  .heading-group .heading-group__subtitle {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif; }
 
 .owl-carousel {
